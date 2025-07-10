@@ -27,12 +27,16 @@
       background-color: #0a9396;
       padding: 15px;
       text-align: center;
+      position: relative;
+      user-select: none;
     }
     .menu {
       display: inline-block;
       position: relative;
     }
-    .menu:hover .submenu {
+    /* Mejor estilo para menú desplegable */
+    .menu:hover .submenu,
+    .menu.show .submenu {
       display: block;
     }
     .submenu {
@@ -41,30 +45,46 @@
       top: 100%;
       left: 0;
       background-color: #0a9396;
-      min-width: 200px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      z-index: 10;
+      min-width: 220px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      border-radius: 6px;
+      padding: 5px 0;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 100;
+    }
+    .menu.show .submenu {
+      opacity: 1;
+      pointer-events: auto;
     }
     .submenu a {
       display: block;
-      padding: 10px;
+      padding: 12px 20px;
       color: white;
       text-decoration: none;
       text-align: left;
       cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
     }
     .submenu a:hover {
       background-color: #007f7f;
     }
-    nav a {
+    nav a.main-link {
       color: white;
       margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
     }
-    nav a:hover {
-      text-decoration: underline;
+    nav a.main-link:hover {
+      background-color: #007f7f;
+      text-decoration: none;
     }
     section {
       padding: 60px 20px;
@@ -127,10 +147,9 @@
     <p>Especialistas en trámites de aguas subterráneas en México</p>
   </header>
   <nav>
-    <div class="menu">
-      <a href="#">Servicios</a>
-      <div class="submenu" role="menu">
-        <!-- Cambié href por onclick para manejar carga en la misma página -->
+    <div class="menu" id="menuServicios">
+      <a href="#" id="btnServicios">Servicios ▼</a>
+      <div class="submenu" role="menu" aria-labelledby="btnServicios">
         <a role="menuitem" onclick="showService('concesion')">Solicitud de concesión</a>
         <a role="menuitem" onclick="showService('renovacion')">Renovación de títulos</a>
         <a role="menuitem" onclick="showService('transmision')">Transmisión de derechos</a>
@@ -141,10 +160,11 @@
         <a role="menuitem" onclick="showService('consultoria')">Consultoría legal</a>
       </div>
     </div>
-    <a href="#clientes">Clientes</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#" class="main-link" onclick="goInicio()">Inicio</a>
+    <a href="#clientes" class="main-link">Clientes</a>
+    <a href="#contacto" class="main-link">Contacto</a>
   </nav>
-  
+
   <!-- Sección principal, visible al inicio -->
   <section id="inicio">
     <h2>Importancia de los trámites de aguas subterráneas</h2>
@@ -320,21 +340,50 @@
   </footer>
 
   <script>
+    const menu = document.getElementById('menuServicios');
+    const btnServicios = document.getElementById('btnServicios');
+
+    // Para toggle manual del menú al hacer clic en "Servicios" (opcional)
+    btnServicios.addEventListener('click', function(e) {
+      e.preventDefault();
+      menu.classList.toggle('show');
+    });
+
+    // Función para mostrar la sección solicitada y ocultar menú y sección inicio
     function showService(serviceId) {
-      // Oculta la sección inicio
+      // Oculta sección inicio
       document.getElementById('inicio').style.display = 'none';
-      // Oculta todas las secciones de servicio
-      const servicios = document.querySelectorAll('.service-section');
-      servicios.forEach(sec => {
+
+      // Oculta todas las secciones de servicios
+      document.querySelectorAll('.service-section').forEach(sec => {
         sec.style.display = 'none';
       });
-      // Muestra la sección solicitada
+
+      // Muestra la sección seleccionada
       const selected = document.getElementById(serviceId);
-      if(selected) {
+      if (selected) {
         selected.style.display = 'block';
-        // Scroll suave hacia el contenido
         selected.scrollIntoView({ behavior: 'smooth' });
       }
+
+      // Oculta el menú desplegable después de seleccionar
+      menu.classList.remove('show');
+    }
+
+    // Función para volver a inicio
+    function goInicio() {
+      // Oculta todas las secciones de servicios
+      document.querySelectorAll('.service-section').forEach(sec => {
+        sec.style.display = 'none';
+      });
+      // Muestra la sección inicio
+      document.getElementById('inicio').style.display = 'block';
+
+      // Oculta el menú si estuviera abierto
+      menu.classList.remove('show');
+
+      // Scroll al inicio
+      document.getElementById('inicio').scrollIntoView({behavior: 'smooth'});
     }
   </script>
 </body>
