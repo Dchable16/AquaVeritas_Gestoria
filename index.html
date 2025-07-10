@@ -3,77 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HidroLegal Consultores | Trámites Aguas Subterráneas México | CONAGUA</title>
-    <meta name="description" content="Expertos en trámites de aguas subterráneas y consultoría legal hídrica en México. Gestionamos concesiones, regularizaciones y renovaciones CONAGUA. ¡Agenda tu asesoría gratuita!">
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>HidroLegal Consultores | Trámites de Aguas Subterráneas | CONAGUA México</title>
+    <meta name="description" content="Expertos en consultoría legal y trámites de aguas subterráneas en México. Gestionamos concesiones, regularizaciones y defensa legal ante CONAGUA. ¡Agenda tu consulta hoy!">
+    <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon"> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
-        /* Variables CSS para consistencia de marca y fácil mantenimiento */
+        /* CSS Custom Properties (Variables CSS): Para una gestión de diseño eficiente y consistente.
+           Facilita cambios globales de estilo y mantiene la coherencia de marca. */
         :root {
-            --primary-blue: #004D73; /* Azul profesional y autoritario */
-            --secondary-cyan: #00BFFF; /* Azul cielo vibrante, más moderno */
-            --accent-green: #28A745; /* Verde para llamadas a la acción, denota crecimiento */
-            --light-blue: #EAF7FF; /* Fondo muy suave y limpio */
-            --dark-text: #2C3E50; /* Texto oscuro para máxima legibilidad */
-            --light-text: #F8F9FA; /* Texto claro para fondos oscuros */
-            --bg-light: #F8FCFF; /* Fondo general ultra suave */
-            --bg-white: #FFFFFF;
-            --shadow-light: rgba(0, 0, 0, 0.07); /* Sombra sutil */
-            --shadow-medium: rgba(0, 0, 0, 0.15); /* Sombra media para profundidad */
-            --shadow-strong: rgba(0, 0, 0, 0.25); /* Sombra fuerte para elementos destacados */
-            --gradient-header: linear-gradient(to right, #004D73, #007AA8); /* Degradado más suave y profesional */
+            /* Colores de la marca: Azules que evocan agua, confianza y profesionalismo.
+               Verde de acento para acciones y positividad. */
+            --color-primary-dark: #003A5C; /* Azul marino profundo */
+            --color-primary-light: #005689; /* Azul medio, para acentos */
+            --color-secondary-accent: #00B2FF; /* Azul cielo vibrante, para destacar */
+            --color-text-dark: #2C3E50; /* Gris oscuro para textos principales */
+            --color-text-light: #E0F2F7; /* Blanco roto para textos en fondos oscuros */
+            --color-background-light: #F8FCFF; /* Fondo general muy claro */
+            --color-background-card: #FFFFFF; /* Fondo de tarjetas/secciones blancas */
+            --color-success-cta: #28A745; /* Verde para llamadas a la acción */
 
-            /* Variables de Espaciado (basado en 1rem = 16px) */
-            --spacing-xs: 0.5rem;   /* 8px */
-            --spacing-sm: 1rem;     /* 16px */
-            --spacing-md: 1.5rem;   /* 24px */
-            --spacing-lg: 2rem;     /* 32px */
-            --spacing-xl: 3rem;     /* 48px */
-            --spacing-xxl: 4rem;    /* 64px */
+            /* Sombras: Añaden profundidad y una sensación premium. */
+            --shadow-light: rgba(0, 0, 0, 0.08);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --shadow-strong: rgba(0, 0, 0, 0.25);
 
-            /* Variables de Fuentes */
-            --font-size-base: 1rem;       /* 16px */
-            --font-size-sm: 0.875rem;     /* 14px */
-            --font-size-md: 1.125rem;     /* 18px */
-            --font-size-lg: 1.25rem;      /* 20px */
-            --font-size-xl: 1.5rem;       /* 24px */
-            --font-size-h1: 3.8rem;       /* 60.8px para escritorio, audaz */
-            --font-size-h2: 2.8rem;       /* 44.8px */
-            --font-size-h3: 2.1rem;       /* 33.6px */
+            /* Espaciado: Un sistema modular para paddings y margins, asegurando consistencia. */
+            --spacing-unit: 1rem; /* Base: 16px */
+            --spacing-xs: calc(var(--spacing-unit) * 0.5); /* 8px */
+            --spacing-sm: calc(var(--spacing-unit) * 1);   /* 16px */
+            --spacing-md: calc(var(--spacing-unit) * 1.5); /* 24px */
+            --spacing-lg: calc(var(--spacing-unit) * 2);   /* 32px */
+            --spacing-xl: calc(var(--spacing-unit) * 3);   /* 48px */
+            --spacing-xxl: calc(var(--spacing-unit) * 4);  /* 64px */
+            --spacing-xxxl: calc(var(--spacing-unit) * 6); /* 96px */
+
+            /* Tipografía: Tamaños de fuente responsivos para legibilidad en diferentes dispositivos. */
+            --font-size-base: 1rem;
+            --font-size-small: 0.875rem;
+            --font-size-medium: 1.125rem;
+            --font-size-large: 1.25rem;
+            --font-size-h1: 3.8rem; /* 60.8px */
+            --font-size-h2: 2.6rem; /* 41.6px */
+            --font-size-h3: 1.8rem; /* 28.8px */
         }
 
+        /* Estilos globales del cuerpo: Define la fuente base, color de texto y comportamiento de scroll. */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: var(--bg-light);
-            color: var(--dark-text);
+            background: var(--color-background-light);
+            color: var(--color-text-dark);
             line-height: 1.7; /* Mayor interlineado para mejor legibilidad */
             font-size: var(--font-size-base);
-            scroll-behavior: smooth;
+            scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces de anclaje */
+            overflow-x: hidden; /* Previene scroll horizontal indeseado */
         }
 
+        /* Contenedor principal: Limita el ancho del contenido para mejor lectura y estética. */
         .container {
-            max-width: 1300px; /* Ligeramente más amplio para contenido premium */
-            margin: auto;
-            padding: var(--spacing-xl) var(--spacing-sm); /* Padding lateral consistente */
+            max-width: 1200px; /* Ancho optimizado para legibilidad */
+            margin: 0 auto; /* Centra el contenedor */
+            padding: 0 var(--spacing-md); /* Espaciado lateral responsivo */
+        }
+
+        /* Estilos de encabezados (h1, h2, h3): Fuentes y colores específicos para jerarquía visual. */
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-primary-dark);
+            line-height: 1.2;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        h1 {
+            font-size: var(--font-size-h1);
+            font-weight: 800; /* Extra bold para el título principal */
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.3); /* Sombra sutil para profundidad */
+        }
+
+        h2 {
+            font-size: var(--font-size-h2);
+            font-weight: 700; /* Bold para títulos de sección */
+            text-align: center;
+            margin-bottom: var(--spacing-xxl);
+            position: relative;
+        }
+
+        h2::after { /* Línea decorativa debajo de los títulos de sección */
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--color-secondary-accent);
+            margin: var(--spacing-md) auto 0;
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: var(--font-size-h3);
+            font-weight: 600; /* Semi-bold para subtítulos */
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p {
+            font-size: var(--font-size-medium);
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text-dark);
+        }
+
+        /* Botones generales (CTA): Estilo consistente para todas las llamadas a la acción. */
+        .btn-primary {
+            background: var(--color-success-cta);
+            color: var(--color-text-light);
+            padding: var(--spacing-md) var(--spacing-lg);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px; /* Bordes suaves */
+            transition: all 0.3s ease; /* Transiciones suaves al interactuar */
+            display: inline-flex; /* Permite alinear texto e icono */
+            align-items: center;
+            gap: var(--spacing-xs);
+            box-shadow: 0 5px 15px var(--shadow-medium);
+            font-size: var(--font-size-medium);
+        }
+
+        .btn-primary:hover {
+            background: #218838; /* Color más oscuro al pasar el ratón */
+            transform: translateY(-3px); /* Pequeña elevación */
+            box-shadow: 0 8px 25px var(--shadow-strong);
+        }
+
+        /* Animación "pulse" para el CTA principal: Llama la atención sutilmente. */
+        .btn-primary.pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 5px 15px var(--shadow-medium); }
+            50% { transform: scale(1.03); box-shadow: 0 8px 25px var(--shadow-strong); }
+            100% { transform: scale(1); box-shadow: 0 5px 15px var(--shadow-medium); }
         }
 
         /* --- Header (Hero Section) --- */
         header {
-            background: var(--gradient-header);
-            color: var(--light-text);
-            padding: var(--spacing-xxl) var(--spacing-sm) var(--spacing-xl);
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-light) 100%); /* Degradado moderno */
+            color: var(--color-text-light);
+            padding: var(--spacing-xxxl) var(--spacing-md) var(--spacing-xxl);
             text-align: center;
-            box-shadow: 0 8px 25px var(--shadow-medium);
+            box-shadow: 0 8px 30px var(--shadow-strong);
             position: relative;
             overflow: hidden;
-            border-bottom-left-radius: 30px; /* Más redondeado */
-            border-bottom-right-radius: 30px;
+            border-bottom-left-radius: 40px; /* Bordes inferiores más redondeados */
+            border-bottom-right-radius: 40px;
         }
 
-        header::before {
+        header::before { /* Capa de fondo con imagen sutil */
             content: '';
             position: absolute;
             top: 0;
@@ -81,81 +165,34 @@
             width: 100%;
             height: 100%;
             background: url('https://images.unsplash.com/photo-1549880816-d3369a19d5c4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
-            opacity: 0.12; /* Más sutil */
+            opacity: 0.1; /* Muy sutil */
             z-index: 1;
-            filter: grayscale(70%); /* Más desaturado */
+            filter: grayscale(80%) brightness(1.2); /* Desatura y aclara para fondo */
         }
 
         header .content {
             position: relative;
             z-index: 2;
+            max-width: 900px; /* Limita el ancho del texto en el héroe */
+            margin: 0 auto;
         }
 
-        header h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: var(--font-size-h1);
-            margin-bottom: var(--spacing-md);
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* Sombra de texto más pronunciada */
-            font-weight: 800; /* Extra bold */
-            line-height: 1.1;
-        }
-
-        header p {
-            font-size: var(--font-size-xl);
-            max-width: 1000px;
-            margin: 0 auto var(--spacing-xl);
-            font-weight: 300;
-            line-height: 1.6;
-        }
-
-        .btn-primary {
-            background: var(--accent-green);
-            color: var(--light-text);
-            padding: var(--spacing-sm) var(--spacing-lg);
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 10px;
-            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 6px 20px var(--shadow-medium);
-            font-size: var(--font-size-md);
-        }
-
-        .btn-primary:hover {
-            background: #218838; /* Verde más oscuro al hover */
-            transform: translateY(-5px); /* Elevación más pronunciada */
-            box-shadow: 0 10px 25px var(--shadow-strong);
-        }
-
-        /* Animación para el botón CTA principal */
-        .btn-primary.pulse {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 6px 20px var(--shadow-medium); }
-            50% { transform: scale(1.03); box-shadow: 0 10px 25px var(--shadow-strong); }
-            100% { transform: scale(1); box-shadow: 0 6px 20px var(--shadow-medium); }
-        }
-
-        /* --- Navigation --- */
+        /* --- Navigation (Barra de Navegación) --- */
         nav {
-            background-color: var(--primary-blue);
+            background-color: var(--color-primary-dark);
             padding: var(--spacing-sm) 0;
             text-align: center;
             box-shadow: 0 4px 15px var(--shadow-light);
-            position: sticky;
+            position: sticky; /* Se queda fijo al hacer scroll */
             top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            font-family: 'Montserrat', sans-serif; /* Fuente más formal para nav */
+            z-index: 1000; /* Asegura que esté por encima de otros elementos */
+            transition: all 0.3s ease; /* Transición suave al cambiar de estado */
+            font-family: 'Montserrat', sans-serif;
         }
 
-        nav.scrolled {
-            background-color: rgba(0, 77, 115, 0.95); /* Ligeramente más oscuro y opaco al scroll */
-            padding: var(--spacing-xs) 0; /* Menos padding al scroll para compactar */
+        nav.scrolled { /* Estilos cuando el usuario hace scroll */
+            background-color: rgba(0, 58, 92, 0.95); /* Ligeramente más opaco y oscuro */
+            padding: var(--spacing-xs) 0; /* Más compacto */
             box-shadow: 0 6px 20px var(--shadow-medium);
         }
 
@@ -163,74 +200,74 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
             padding: 0 var(--spacing-sm);
         }
 
+        nav .nav-links {
+            display: flex; /* Por defecto en escritorio */
+        }
+
         nav a {
-            color: var(--light-text);
+            color: var(--color-text-light);
             margin: 0 var(--spacing-md);
             text-decoration: none;
-            font-weight: 600; /* Bold para enlaces de nav */
+            font-weight: 600;
             font-size: var(--font-size-base);
             padding: var(--spacing-xs) 0;
-            transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.2s ease;
+            transition: color 0.3s ease, transform 0.2s ease;
             position: relative;
-            white-space: nowrap; /* Evita que los enlaces se rompan */
+            white-space: nowrap; /* Evita saltos de línea en los enlaces */
         }
 
         nav a:hover {
-            color: var(--secondary-cyan);
-            text-shadow: 0 0 8px rgba(255,255,255,0.7);
-            transform: translateY(-2px); /* Pequeña elevación al hover */
+            color: var(--color-secondary-accent);
+            transform: translateY(-2px);
         }
 
-        nav a::after {
+        nav a::after { /* Línea de resalte al pasar el ratón o en el elemento activo */
             content: '';
             position: absolute;
             width: 0;
-            height: 3px; /* Más grueso */
-            bottom: -8px; /* Más abajo */
+            height: 3px;
+            bottom: -8px;
             left: 0;
-            background-color: var(--secondary-cyan);
+            background-color: var(--color-secondary-accent);
             transition: width 0.3s ease-out;
             border-radius: 2px;
         }
 
         nav a:hover::after,
-        nav a.active::after { /* Clase 'active' para ScrollSpy */
+        nav a.active::after {
             width: 100%;
         }
-        nav a.active { /* Estilo para el elemento activo */
-            color: var(--secondary-cyan);
-        }
 
-
+        /* Submenú: Estilo para el menú desplegable de servicios. */
         .menu {
             position: relative;
             display: inline-block;
         }
 
         .submenu {
-            display: none;
+            display: none; /* Oculto por defecto */
             position: absolute;
-            top: calc(100% + 15px); /* Mayor separación para evitar solapamiento */
+            top: calc(100% + var(--spacing-sm)); /* Posicionado debajo del elemento padre */
             left: 50%;
             transform: translateX(-50%);
-            background: var(--bg-white);
-            border: 1px solid var(--secondary-cyan);
+            background: var(--color-background-card);
+            border: 1px solid var(--color-secondary-accent);
             border-radius: 12px;
             box-shadow: 0 10px 30px var(--shadow-strong);
-            min-width: 300px; /* Más ancho */
+            min-width: 280px;
             z-index: 1001;
             overflow: hidden;
-            padding: var(--spacing-sm) 0;
+            padding: var(--spacing-xs) 0;
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
         }
 
-        .menu:hover .submenu {
+        .menu:hover .submenu { /* Muestra el submenú al pasar el ratón sobre el padre */
             display: block;
             opacity: 1;
             visibility: visible;
@@ -241,195 +278,164 @@
             display: flex; /* Para alinear icono y texto */
             align-items: center;
             padding: var(--spacing-sm) var(--spacing-lg);
-            color: var(--primary-blue);
+            color: var(--color-primary-dark);
             text-decoration: none;
             font-weight: 500;
-            background-color: var(--bg-white);
+            background-color: var(--color-background-card);
             transition: background 0.2s ease, color 0.2s ease;
             text-align: left;
-            margin: 0;
+            margin: 0; /* Elimina márgenes de enlaces de nav */
             font-size: var(--font-size-base);
-            border-bottom: 1px solid #F0F0F0; /* Separador sutil */
+            border-bottom: 1px solid #F0F0F0;
         }
         .submenu a:last-child {
-            border-bottom: none;
+            border-bottom: none; /* No hay borde en el último elemento */
         }
 
         .submenu a:hover {
-            background-color: var(--light-blue);
-            color: var(--primary-blue);
-            text-shadow: none; /* Eliminar sombra de texto al hover en submenu */
+            background-color: var(--color-background-light);
+            color: var(--color-primary-light);
+            text-shadow: none;
         }
-        .submenu a i {
-            margin-right: 12px;
-            color: var(--secondary-cyan);
-            font-size: var(--font-size-md); /* Iconos ligeramente más grandes */
+        .submenu a i { /* Estilo de los iconos en el submenú */
+            margin-right: var(--spacing-sm);
+            color: var(--color-secondary-accent);
+            font-size: var(--font-size-medium);
             transition: color 0.2s ease;
         }
         .submenu a:hover i {
-            color: var(--primary-blue);
+            color: var(--color-primary-dark);
         }
 
-        /* --- Mobile Navigation Toggle (Hamburguesa) --- */
+        /* Botón de navegación móvil (hamburguesa): Visible solo en pantallas pequeñas. */
         .nav-toggle {
-            display: none; /* Oculto en escritorio */
+            display: none; /* Oculto por defecto en escritorio */
             font-size: var(--font-size-xl);
-            color: var(--light-text);
+            color: var(--color-text-light);
             cursor: pointer;
-            margin-right: var(--spacing-sm);
-            position: absolute;
-            right: var(--spacing-sm);
+            position: absolute; /* Posicionado absolutamente dentro del nav */
+            right: var(--spacing-md);
             top: 50%;
             transform: translateY(-50%);
-            z-index: 1001; /* Asegura que esté por encima del nav */
+            z-index: 1001;
             padding: var(--spacing-xs);
+            background: transparent;
+            border: none;
+            outline: none;
         }
         .nav-toggle:hover {
-            color: var(--secondary-cyan);
+            color: var(--color-secondary-accent);
         }
 
 
-        /* --- Sections --- */
+        /* --- Sections (Secciones de Contenido) --- */
         section {
             padding: var(--spacing-xxl) 0; /* Padding vertical generoso */
-            background: var(--bg-white);
+            background: var(--color-background-card);
             margin-bottom: var(--spacing-xl); /* Espacio entre secciones */
-            box-shadow: 0 4px 18px var(--shadow-light); /* Sombra más suave */
-            border-radius: 16px; /* Más redondeado */
+            box-shadow: 0 4px 18px var(--shadow-light); /* Sombra sutil */
+            border-radius: 16px; /* Bordes redondeados para un aspecto moderno */
             overflow: hidden;
-            transition: all 0.5s ease-out; /* Transición para fade-in */
+            /* Animación al hacer scroll (inicialmente oculto) */
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
-        section.visible { /* Clase para animación al scroll */
+        section.visible { /* Clase para activar la animación cuando está en vista */
             opacity: 1;
             transform: translateY(0);
         }
 
-        section:nth-of-type(even) {
-            background: var(--bg-light);
-        }
-
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary-blue);
-            font-size: var(--font-size-h2);
-            text-align: center;
-            margin-bottom: var(--spacing-xl);
-            position: relative;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 120px; /* Más largo */
-            height: 5px; /* Más grueso */
-            background: var(--secondary-cyan);
-            margin: var(--spacing-md) auto 0;
-            border-radius: 5px;
-        }
-
-        h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary-blue);
-            font-size: var(--font-size-h3);
-            margin-bottom: var(--spacing-sm);
-            font-weight: 600;
-        }
-
-        p {
-            font-size: var(--font-size-md); /* Párrafos más grandes para legibilidad */
-            margin-bottom: var(--spacing-md);
-            color: var(--dark-text);
+        section:nth-of-type(even) { /* Estilo alterno para secciones pares */
+            background: var(--color-background-light);
         }
 
         /* --- Acerca de Nosotros --- */
         .about-us-content {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan */
             align-items: center;
-            gap: var(--spacing-xxl); /* Mayor separación */
+            gap: var(--spacing-xxl); /* Espacio entre texto e imagen */
         }
 
         .about-us-content .text-content {
-            flex: 2;
-            min-width: 350px; /* Ancho mínimo para texto */
+            flex: 2; /* Ocupa más espacio que la imagen */
+            min-width: 300px; /* Ancho mínimo para legibilidad en pantallas pequeñas */
         }
 
         .about-us-content .image-content {
             flex: 1;
-            min-width: 300px; /* Ancho mínimo para imagen */
+            min-width: 250px;
             text-align: center;
         }
 
         .about-us-content img {
             max-width: 100%;
             height: auto;
-            border-radius: 20px; /* Más redondeado */
-            box-shadow: 0 12px 35px var(--shadow-strong); /* Sombra más profunda */
-            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Curva de animación suave */
+            border-radius: 12px;
+            box-shadow: 0 10px 30px var(--shadow-medium);
+            transition: transform 0.3s ease;
         }
 
         .about-us-content img:hover {
-            transform: scale(1.02); /* Pequeño zoom al hover */
+            transform: scale(1.02); /* Efecto de zoom sutil */
         }
 
         /* --- Servicios --- */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); /* Tarjetas más anchas */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
             gap: var(--spacing-xl);
             margin-top: var(--spacing-xl);
         }
 
         .service-card {
-            background: var(--bg-white);
-            border-radius: 18px; /* Más redondeado */
-            box-shadow: 0 8px 25px var(--shadow-light);
-            padding: var(--spacing-lg) var(--spacing-xl);
+            background: var(--color-background-card);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px var(--shadow-light);
+            padding: var(--spacing-xl);
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            border-top: 8px solid var(--secondary-cyan); /* Borde superior más prominente */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--color-secondary-accent); /* Borde superior distintivo */
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start; /* Alinea contenido arriba */
+            min-height: 280px; /* Altura mínima para tarjetas uniformes */
         }
 
         .service-card:hover {
-            transform: translateY(-12px) scale(1.01); /* Elevación y ligero zoom */
-            box-shadow: 0 15px 40px var(--shadow-strong);
-            border-color: var(--primary-blue);
+            transform: translateY(-8px); /* Efecto de elevación */
+            box-shadow: 0 12px 30px var(--shadow-medium);
+            border-color: var(--color-primary-dark); /* Cambio de color al hover */
         }
 
         .service-card .icon {
-            font-size: 4.5em; /* Iconos más grandes */
-            color: var(--secondary-cyan);
+            font-size: 3.5em; /* Iconos grandes y claros */
+            color: var(--color-secondary-accent);
             margin-bottom: var(--spacing-md);
             transition: color 0.3s ease;
         }
         .service-card:hover .icon {
-            color: var(--primary-blue);
+            color: var(--color-primary-dark);
         }
 
         .service-card h3 {
-            font-size: var(--font-size-xl);
+            font-size: var(--font-size-large);
             margin-bottom: var(--spacing-sm);
-            color: var(--primary-blue);
+            color: var(--color-primary-dark);
         }
 
         .service-card p {
             font-size: var(--font-size-base);
             color: #555;
-            flex-grow: 1;
+            flex-grow: 1; /* Permite que el párrafo ocupe el espacio restante */
         }
 
         /* --- Clientes / Beneficiarios --- */
         .beneficiaries-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Elementos un poco más grandes */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: var(--spacing-md);
             list-style: none;
             padding: 0;
@@ -437,14 +443,14 @@
         }
 
         .beneficiaries-list li {
-            background: var(--light-blue);
-            padding: var(--spacing-md);
-            border-radius: 10px;
+            background: var(--color-background-light);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 8px;
             font-weight: 500;
-            color: var(--primary-blue);
-            box-shadow: 0 3px 12px var(--shadow-light);
+            color: var(--color-primary-dark);
+            box-shadow: 0 2px 8px var(--shadow-light);
             transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            font-size: var(--font-size-md);
+            font-size: var(--font-size-medium);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -452,38 +458,37 @@
         }
 
         .beneficiaries-list li:hover {
-            background: var(--secondary-cyan);
-            color: var(--light-text);
-            transform: translateY(-4px) scale(1.01);
-            box-shadow: 0 6px 15px var(--shadow-medium);
+            background: var(--color-secondary-accent);
+            color: var(--color-text-light);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px var(--shadow-medium);
         }
 
         .beneficiaries-list li::before {
-            content: '✓';
-            font-family: 'Font Awesome 6 Free'; /* Asegura el icono si no está en la fuente principal */
-            font-weight: 900; /* Para que sea sólido */
-            color: var(--primary-blue);
-            font-size: 1.2em;
-            margin-right: 8px;
+            content: '\f00c'; /* Icono de checkmark de Font Awesome */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--color-secondary-accent);
+            font-size: 1.1em;
+            margin-right: var(--spacing-xs);
             transition: color 0.3s ease;
         }
         .beneficiaries-list li:hover::before {
-            color: var(--light-text);
+            color: var(--color-text-light);
         }
-
 
         /* --- Testimonios --- */
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: var(--spacing-xl);
         }
 
         .testimonial-card {
-            background: var(--light-blue);
+            background: var(--color-background-light);
             padding: var(--spacing-lg) var(--spacing-xl);
-            border-radius: 18px;
-            box-shadow: 0 6px 20px var(--shadow-light);
+            border-radius: 16px;
+            box-shadow: 0 5px 18px var(--shadow-light);
             font-style: italic;
             color: #444;
             position: relative;
@@ -494,21 +499,21 @@
         }
 
         .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 30px var(--shadow-medium);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px var(--shadow-medium);
         }
 
-        .testimonial-card::before {
+        .testimonial-card::before { /* Comillas grandes de fondo */
             content: '“';
             font-family: serif;
-            font-size: 6em; /* Comillas más grandes */
-            color: rgba(0, 77, 115, 0.08); /* Comillas de fondo más discretas */
+            font-size: 6em;
+            color: rgba(0, 58, 92, 0.08);
             position: absolute;
             top: 0px;
-            left: 10px;
+            left: var(--spacing-md);
             line-height: 1;
             z-index: 0;
-            pointer-events: none; /* Asegura que no interfiera con el texto */
+            pointer-events: none;
         }
 
         .testimonial-card p {
@@ -516,26 +521,26 @@
             font-size: var(--font-size-base);
             position: relative;
             z-index: 1;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         .testimonial-card .author {
             font-weight: 600;
-            color: var(--primary-blue);
+            color: var(--color-primary-dark);
             font-style: normal;
             text-align: right;
             margin-top: var(--spacing-md);
             font-size: var(--font-size-base);
         }
 
-        /* --- CTA Section --- */
+        /* --- CTA Section (Llamada a la Acción) --- */
         .cta-section {
             text-align: center;
-            background: var(--secondary-cyan);
-            color: var(--light-text);
-            padding: var(--spacing-xxl) var(--spacing-sm);
-            border-radius: 20px; /* Más redondeado */
-            margin-top: var(--spacing-xl);
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary-accent) 100%); /* Degradado para CTA */
+            color: var(--color-text-light);
+            padding: var(--spacing-xxl) var(--spacing-md);
+            border-radius: 20px;
+            margin-top: var(--spacing-xxl);
             box-shadow: 0 10px 30px var(--shadow-strong);
             position: relative;
             overflow: hidden;
@@ -543,18 +548,18 @@
 
         .cta-section h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: var(--font-size-h2); /* Mismo tamaño que H2 para CTA impactante */
+            font-size: var(--font-size-h2);
             margin-bottom: var(--spacing-lg);
-            color: var(--light-text);
+            color: var(--color-text-light);
             text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
             font-weight: 700;
         }
 
         .cta-section p {
-            font-size: var(--font-size-xl);
-            max-width: 900px;
+            font-size: var(--font-size-large);
+            max-width: 800px;
             margin: 0 auto var(--spacing-xl);
-            color: var(--light-text);
+            color: var(--color-text-light);
             font-weight: 300;
             line-height: 1.5;
         }
@@ -569,34 +574,34 @@
         }
 
         .contact-item {
-            background: var(--light-blue);
+            background: var(--color-background-light);
             padding: var(--spacing-lg);
-            border-radius: 16px;
+            border-radius: 12px;
             flex: 1;
-            min-width: 280px;
-            max-width: 380px; /* Mayor ancho para ítems de contacto */
-            box-shadow: 0 5px 18px var(--shadow-light);
+            min-width: 250px;
+            max-width: 320px;
+            box-shadow: 0 4px 15px var(--shadow-light);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-top: 5px solid var(--primary-blue); /* Borde superior distintivo */
+            border-top: 4px solid var(--color-primary-dark);
         }
 
         .contact-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px var(--shadow-medium);
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px var(--shadow-medium);
         }
 
         .contact-item .icon {
-            font-size: 3.5em; /* Iconos más grandes */
-            color: var(--secondary-cyan);
+            font-size: 3em;
+            color: var(--color-secondary-accent);
             margin-bottom: var(--spacing-sm);
         }
 
         .contact-item h3 {
-            font-size: var(--font-size-lg);
+            font-size: var(--font-size-medium);
             margin-bottom: var(--spacing-xs);
         }
 
@@ -607,14 +612,14 @@
         }
 
         .contact-item a {
-            color: var(--primary-blue);
+            color: var(--color-primary-dark);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease, text-decoration 0.3s ease;
         }
 
         .contact-item a:hover {
-            color: var(--secondary-cyan);
+            color: var(--color-secondary-accent);
             text-decoration: underline;
         }
 
@@ -627,31 +632,31 @@
 
         .faq-question {
             font-weight: 600;
-            color: var(--primary-blue);
+            color: var(--color-primary-dark);
             cursor: pointer;
             padding: var(--spacing-sm) 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: var(--font-size-lg);
+            font-size: var(--font-size-large);
             transition: color 0.3s ease;
         }
 
         .faq-question:hover {
-            color: var(--secondary-cyan);
+            color: var(--color-secondary-accent);
         }
 
         .faq-question .arrow {
-            font-size: 1.4em;
+            font-size: 1.2em;
             transition: transform 0.3s ease;
-            color: var(--secondary-cyan);
+            color: var(--color-secondary-accent);
         }
 
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; /* Transición más larga */
-            padding-left: var(--spacing-sm);
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            padding-left: var(--spacing-md);
             color: #555;
             font-size: var(--font-size-base);
             line-height: 1.6;
@@ -669,30 +674,30 @@
 
         /* --- Footer --- */
         footer {
-            background-color: var(--primary-blue);
-            color: var(--light-text);
+            background-color: var(--color-primary-dark);
+            color: var(--color-text-light);
             text-align: center;
-            padding: var(--spacing-xl) var(--spacing-sm);
-            margin-top: var(--spacing-xl);
+            padding: var(--spacing-xl) var(--spacing-md);
+            margin-top: var(--spacing-xxl);
             box-shadow: 0 -4px 15px var(--shadow-light);
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
-            font-size: var(--font-size-sm);
+            font-size: var(--font-size-small);
             line-height: 1.5;
         }
 
         footer p {
             margin: 0;
             font-size: var(--font-size-base);
-            color: var(--light-text);
+            color: var(--color-text-light);
         }
 
-        /* --- WhatsApp Button --- */
+        /* --- WhatsApp Button (Flotante) --- */
         .whatsapp {
             position: fixed;
             bottom: var(--spacing-lg);
             right: var(--spacing-lg);
-            background: #25D366;
+            background: #25D366; /* Color oficial de WhatsApp */
             color: white;
             padding: var(--spacing-sm);
             border-radius: 50%;
@@ -701,62 +706,55 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: var(--spacing-xl); /* 48px */
+            width: var(--spacing-xl);
             height: var(--spacing-xl);
             text-decoration: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .whatsapp:hover {
-            transform: scale(1.15); /* Mayor zoom al hover */
+            transform: scale(1.15);
             box-shadow: 0 12px 30px rgba(0,0,0,0.4);
         }
         .whatsapp i {
-            font-size: 2.8em; /* Icono más grande */
+            font-size: 2.8em;
         }
-        /* Animación para el botón de WhatsApp */
-        .whatsapp.bounce {
+        .whatsapp.bounce { /* Animación para llamar la atención */
             animation: bounce 2s infinite;
         }
-
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
 
 
-        /* --- Responsive Design --- */
+        /* --- Responsive Design (Media Queries) ---
+           Ajustes para asegurar una experiencia óptima en diferentes tamaños de pantalla. */
 
         /* Para pantallas grandes (desktop extendido) */
         @media (min-width: 1400px) {
             .container {
                 max-width: 1400px;
             }
-            header h1 {
-                font-size: 4.5rem; /* Aún más grande para pantallas muy grandes */
+            h1 {
+                font-size: 4.5rem;
             }
         }
 
-        /* Laptops y tablets grandes (992px - 1399px) */
+        /* Tablets y laptops (992px - 1399px) */
         @media (max-width: 1399px) {
-            header h1 {
+            h1 {
                 font-size: var(--font-size-h1);
             }
         }
 
         /* Tablets (768px - 991px) */
         @media (max-width: 991px) {
-            header h1 {
+            h1 {
                 font-size: calc(var(--font-size-h1) * 0.8);
             }
-            header p {
-                font-size: var(--font-size-lg);
+            p {
+                font-size: var(--font-size-base);
             }
             h2 {
                 font-size: calc(var(--font-size-h2) * 0.8);
@@ -768,20 +766,19 @@
                 padding: var(--spacing-xl) 0;
             }
             .about-us-content {
-                flex-direction: column;
+                flex-direction: column; /* Columna en tablets */
                 text-align: center;
                 gap: var(--spacing-xl);
             }
             .about-us-content .image-content {
-                order: -1; /* Mueve la imagen arriba en móvil */
+                order: -1; /* Mueve la imagen arriba del texto */
                 margin-bottom: var(--spacing-md);
             }
             .services-grid, .testimonials-grid, .contact-info, .beneficiaries-list {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Más pequeñas */
             }
             nav a {
                 margin: 0 var(--spacing-sm);
-                font-size: var(--font-size-base);
             }
         }
 
@@ -789,42 +786,42 @@
         @media (max-width: 767px) {
             header {
                 padding: var(--spacing-xl) var(--spacing-sm) var(--spacing-lg);
-                border-bottom-left-radius: 20px;
-                border-bottom-right-radius: 20px;
+                border-bottom-left-radius: 25px;
+                border-bottom-right-radius: 25px;
             }
-            header h1 {
-                font-size: calc(var(--font-size-h1) * 0.55); /* Ajuste para pantallas muy pequeñas */
+            h1 {
+                font-size: calc(var(--font-size-h1) * 0.6); /* Título más pequeño en móvil */
                 margin-bottom: var(--spacing-sm);
             }
-            header p {
+            p {
                 font-size: var(--font-size-base);
                 margin-bottom: var(--spacing-md);
             }
             .btn-primary {
                 padding: var(--spacing-sm) var(--spacing-md);
                 font-size: var(--font-size-base);
-                gap: 5px;
+                gap: var(--spacing-xs);
             }
 
-            /* Navegación móvil con hamburguesa (ocultar menú por defecto) */
+            /* Navegación móvil: el menú se oculta detrás de un icono de hamburguesa */
             nav .container {
                 flex-direction: column;
-                align-items: flex-start; /* Alinear elementos a la izquierda */
+                align-items: flex-start;
                 position: relative;
                 padding-top: var(--spacing-md);
             }
             nav .nav-links {
-                display: none; /* Ocultar enlaces por defecto */
+                display: none; /* Oculto por defecto */
                 width: 100%;
                 flex-direction: column;
                 align-items: stretch;
-                background-color: var(--primary-blue); /* Fondo para el menú desplegado */
+                background-color: var(--color-primary-dark);
                 box-shadow: 0 5px 15px var(--shadow-medium);
                 border-radius: 0 0 10px 10px;
                 padding-bottom: var(--spacing-sm);
             }
-            nav .nav-links.open {
-                display: flex; /* Mostrar cuando está abierto */
+            nav .nav-links.active { /* Se muestra con JS al hacer clic en hamburguesa */
+                display: flex;
             }
             nav a {
                 display: block;
@@ -836,84 +833,75 @@
             nav a:last-child {
                 border-bottom: none;
             }
-            nav a::after {
-                display: none; /* Deshabilitar underline animado en móvil para simplicidad */
+            nav a::after { /* Deshabilita el efecto de underline para móvil */
+                display: none;
             }
             .menu {
                 width: 100%;
                 border-bottom: 1px solid rgba(255,255,255,0.1);
             }
             .submenu {
-                position: static;
+                position: static; /* No flotante, parte del flujo */
                 transform: none;
                 box-shadow: none;
-                background-color: rgba(0, 77, 115, 0.9); /* Más oscuro que el nav principal */
+                background-color: rgba(0, 58, 92, 0.9); /* Submenú más oscuro */
                 border: none;
                 border-radius: 0;
                 padding: 0;
-                opacity: 1;
+                opacity: 1; /* Siempre visible si el padre está abierto */
                 visibility: visible;
-                display: none; /* Controlado por JS, inicialmente oculto */
+                display: none; /* Controlado por JS para transición suave */
                 max-height: 0;
                 transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
             }
-            .menu.active .submenu { /* Cuando el menú principal está activo, se muestra el submenú */
+            .menu.active .submenu {
                 display: flex;
-                max-height: 500px; /* Suficiente para todos los elementos */
+                max-height: 500px; /* Suficiente para todo el contenido */
                 padding-top: var(--spacing-xs);
                 padding-bottom: var(--spacing-xs);
             }
             .submenu a {
                 padding: var(--spacing-xs) var(--spacing-md) var(--spacing-xs) calc(var(--spacing-md) * 2); /* Indentación */
-                background-color: rgba(0, 77, 115, 0.9);
-                color: var(--light-text);
+                background-color: rgba(0, 58, 92, 0.9);
+                color: var(--color-text-light);
                 border-bottom: 1px solid rgba(255,255,255,0.08);
             }
             .submenu a:hover {
-                background-color: #003a55; /* Un tono aún más oscuro */
+                background-color: #003a55;
             }
             .submenu a i {
-                color: var(--light-text);
+                color: var(--color-text-light);
             }
-            .nav-toggle {
-                display: block; /* Mostrar botón hamburguesa */
-                position: static; /* No fijo, dentro del flujo */
+            .nav-toggle { /* Muestra el botón de hamburguesa */
+                display: block;
+                position: static;
                 transform: none;
-                align-self: flex-end; /* Alinearlo a la derecha en la parte superior */
-                margin-left: auto; /* Empuja a la derecha */
+                align-self: flex-end;
+                margin-left: auto;
                 margin-right: var(--spacing-sm);
                 padding-top: var(--spacing-xs);
                 padding-bottom: var(--spacing-xs);
             }
-            /* Ocultar elementos de navegación cuando el toggle está visible */
+            /* Ocultar elementos directos del nav cuando el toggle está visible */
             nav .container > a, nav .container > .menu {
                 display: none;
             }
+            /* Mostrar solo el toggle y el contenedor de enlaces cuando el menú está abierto */
             nav .container.open > .nav-links, nav .container.open > .menu {
-                display: flex; /* Mostrar enlaces cuando el menú está abierto */
+                display: flex;
                 flex-direction: column;
                 width: 100%;
             }
-            /* Esconder los elementos directos del nav si el toggle está activo */
-            nav .nav-links {
-                display: none; /* Ocultar por defecto */
-            }
-            nav .nav-links.active {
-                display: flex; /* Mostrar si el toggle está activo */
-            }
 
             h2 {
-                font-size: calc(var(--font-size-h2) * 0.65);
-                margin-bottom: var(--spacing-md);
-            }
-            p {
-                font-size: var(--font-size-base);
+                font-size: calc(var(--font-size-h2) * 0.7);
+                margin-bottom: var(--spacing-lg);
             }
             h3 {
-                font-size: var(--font-size-lg);
+                font-size: var(--font-size-large);
             }
             .services-grid, .testimonials-grid, .contact-info, .beneficiaries-list {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Una columna */
             }
             .service-card, .testimonial-card, .contact-item {
                 padding: var(--spacing-md);
@@ -922,20 +910,20 @@
                 font-size: var(--font-size-h3);
             }
             .whatsapp {
-                width: var(--spacing-xl);
-                height: var(--spacing-xl);
+                width: var(--spacing-lg);
+                height: var(--spacing-lg);
                 bottom: var(--spacing-sm);
                 right: var(--spacing-sm);
             }
             .whatsapp i {
-                font-size: 2.2em;
+                font-size: 2em;
             }
         }
 
-        /* Impresión (para un mejor formato al imprimir) */
+        /* Estilos para impresión: Asegura que la página se vea bien al imprimir. */
         @media print {
-            header, nav, footer, .whatsapp, .btn-primary, .faq-question .arrow {
-                display: none !important;
+            header, nav, footer, .whatsapp, .btn-primary, .faq-question .arrow, .nav-toggle {
+                display: none !important; /* Oculta elementos no esenciales para impresión */
             }
             body {
                 background: white;
@@ -948,14 +936,14 @@
                 margin-bottom: 1em;
                 padding: 1em 0;
                 opacity: 1 !important;
-                transform: none !important;
+                transform: none !important; /* Asegura que las animaciones no afecten la impresión */
             }
             h1, h2, h3 {
                 color: black !important;
                 text-shadow: none !important;
             }
             .about-us-content, .services-grid, .testimonials-grid, .contact-info, .beneficiaries-list {
-                display: block !important;
+                display: block !important; /* Fuerza el display de bloque para un layout lineal */
             }
             .service-card, .testimonial-card, .contact-item, .beneficiaries-list li {
                 box-shadow: none;
@@ -986,273 +974,321 @@
 <body>
     <header>
         <div class="content container">
-            <h1>HidroLegal Consultores: Tu Socio Experto en **Trámites de Aguas Subterráneas en México**</h1>
-            <p>Simplificamos la compleja **gestión legal y técnica de tus derechos de agua ante CONAGUA**. Garantizamos el cumplimiento normativo, la seguridad hídrica y el **éxito de tus proyectos** en todo el país.</p>
-            <a href="#contacto" class="btn-primary pulse"><i class="fas fa-calendar-alt"></i> Agenda tu Asesoría Gratuita Hoy</a>
+            <h1 aria-label="HidroLegal Consultores: Tu Socio Experto en Trámites de Aguas Subterráneas en México">
+                HidroLegal Consultores: Tu Socio Experto en <span class="highlight">Trámites de Aguas Subterráneas</span> en México
+            </h1>
+            <p>
+                Simplificamos la compleja <strong class="highlight">gestión legal y técnica de tus derechos de agua</strong> ante CONAGUA.
+                Garantizamos el cumplimiento normativo, la seguridad hídrica y el <strong class="highlight">éxito de tus proyectos</strong> en cada paso.
+            </p>
+            <a href="#contacto" class="btn-primary pulse" aria-label="Agenda tu Asesoría Gratuita Hoy con HidroLegal">
+                <i class="fas fa-calendar-alt"></i> Agenda tu Asesoría Gratuita Hoy
+            </a>
         </div>
     </header>
 
-    <nav>
+    <nav aria-label="Navegación principal del sitio">
         <div class="container">
-            <button class="nav-toggle" aria-label="Abrir menú de navegación">
+            <button class="nav-toggle" aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir menú de navegación">
                 <i class="fas fa-bars"></i>
             </button>
-            <div class="nav-links">
+            <div class="nav-links" id="main-navigation">
                 <div class="menu">
-                    <a href="#servicios">Servicios <i class="fas fa-chevron-down"></i></a>
-                    <div class="submenu">
-                        <a href="#concesion"><i class="fas fa-file-alt"></i> Solicitud de **concesión de agua**</a>
-                        <a href="#renovacion"><i class="fas fa-redo-alt"></i> **Renovación de títulos** de agua</a>
-                        <a href="#transmision"><i class="fas fa-exchange-alt"></i> Transmisión de **derechos de agua**</a>
-                        <a href="#memorias"><i class="fas fa-chart-line"></i> Memorias técnicas de **pozos**</a>
-                        <a href="#regularizacion"><i class="fas fa-check-circle"></i> **Regularización de pozos** de agua</a>
-                        <a href="#dictamenes"><i class="fas fa-gavel"></i> Dictámenes técnicos **CONAGUA**</a>
-                        <a href="#auditoria"><i class="fas fa-search-dollar"></i> Auditoría hídrica y **cumplimiento normativo**</a>
-                        <a href="#consultoria"><i class="fas fa-handshake"></i> **Consultoría legal** especializada en agua</a>
+                    <a href="#servicios" aria-haspopup="true" aria-expanded="false">Servicios <i class="fas fa-chevron-down"></i></a>
+                    <div class="submenu" role="menu">
+                        <a href="#concesion" role="menuitem"><i class="fas fa-file-alt"></i> Solicitud de <strong class="highlight">concesión de agua</strong></a>
+                        <a href="#renovacion" role="menuitem"><i class="fas fa-redo-alt"></i> <strong class="highlight">Renovación de títulos</strong> de agua</a>
+                        <a href="#transmision" role="menuitem"><i class="fas fa-exchange-alt"></i> Transmisión de <strong class="highlight">derechos de agua</strong></a>
+                        <a href="#memorias" role="menuitem"><i class="fas fa-chart-line"></i> Memorias técnicas de <strong class="highlight">pozos</strong></a>
+                        <a href="#regularizacion" role="menuitem"><i class="fas fa-check-circle"></i> <strong class="highlight">Regularización de pozos</strong> de agua</a>
+                        <a href="#dictamenes" role="menuitem"><i class="fas fa-gavel"></i> <strong class="highlight">Dictámenes técnicos</strong> CONAGUA</a>
+                        <a href="#auditoria" role="menuitem"><i class="fas fa-search-dollar"></i> Auditoría hídrica y <strong class="highlight">cumplimiento normativo</strong></a>
+                        <a href="#consultoria" role="menuitem"><i class="fas fa-handshake"></i> <strong class="highlight">Consultoría legal</strong> especializada en agua</a>
                     </div>
                 </div>
-                <a href="#acerca-de">Acerca de HidroLegal</a>
-                <a href="#clientes-potenciales">¿Para Quiénes?</a>
-                <a href="#testimonios">Testimonios</a>
-                <a href="#faq">Preguntas Frecuentes</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#acerca-de" aria-label="Ir a la sección Acerca de HidroLegal">Acerca de HidroLegal</a>
+                <a href="#clientes-potenciales" aria-label="Ir a la sección ¿Para Quiénes?">¿Para Quiénes?</a>
+                <a href="#testimonios" aria-label="Ir a la sección Testimonios de Clientes">Testimonios</a>
+                <a href="#faq" aria-label="Ir a la sección Preguntas Frecuentes">Preguntas Frecuentes</a>
+                <a href="#contacto" aria-label="Ir a la sección Contacto">Contacto</a>
             </div>
         </div>
     </nav>
 
-    <section id="acerca-de">
-        <div class="container">
-            <h2>Acerca de HidroLegal Consultores: Tu socio estratégico en **gestión hídrica integral**</h2>
-            <div class="about-us-content">
-                <div class="text-content">
-                    <p>En **HidroLegal Consultores**, somos un equipo de expertos dedicados a simplificar la compleja **gestión de trámites de aguas subterráneas en México**. Entendemos la importancia crítica de este recurso para tu operación y la necesidad ineludible de cumplir rigurosamente con la **Ley de Aguas Nacionales**.</p>
-                    <p>Nuestra misión es orientar a nuestros clientes para que cumplan cabalmente con sus obligaciones legales, asegurando su **seguridad jurídica** y fomentando una cultura hídrica responsable y sostenible. Con años de experiencia y un profundo conocimiento de la normativa de **CONAGUA**, te ofrecemos soluciones integrales para que tu proyecto avance sin contratiempos, **optimizando tus recursos hídricos**.</p>
-                    <p>Nos enorgullece ser tu socio confiable, brindando asesoría ética, transparente y eficiente para la explotación y aprovechamiento del **agua subterránea** en el país, transformando desafíos legales en **oportunidades de crecimiento** para tu negocio.</p>
-                </div>
-                <div class="image-content">
-                    <img src="https://images.unsplash.com/photo-1549880816-d3369a19d5c4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Equipo de consultores de HidroLegal revisando documentos legales y planos de agua, simbolizando gestión de trámites CONAGUA y consultoría hídrica.">
+    <main>
+        <section id="acerca-de" aria-labelledby="acerca-de-heading">
+            <div class="container">
+                <h2 id="acerca-de-heading">Acerca de HidroLegal Consultores: Tu socio estratégico en <strong class="highlight">gestión hídrica integral</strong></h2>
+                <div class="about-us-content">
+                    <div class="text-content">
+                        <p>En **HidroLegal Consultores**, somos un equipo de expertos dedicados a simplificar la compleja **gestión de trámites de aguas subterráneas en México**. Entendemos la importancia crítica de este recurso para tu operación y la necesidad ineludible de cumplir rigurosamente con la **Ley de Aguas Nacionales**.</p>
+                        <p>Nuestra misión es orientar a nuestros clientes para que cumplan cabalmente con sus obligaciones legales, asegurando su **seguridad jurídica** y fomentando una cultura hídrica responsable y sostenible. Con años de experiencia y un profundo conocimiento de la normativa de **CONAGUA**, te ofrecemos soluciones integrales para que tu proyecto avance sin contratiempos, **optimizando tus recursos hídricos**.</p>
+                        <p>Nos enorgullece ser tu socio confiable, brindando asesoría ética, transparente y eficiente para la explotación y aprovechamiento del **agua subterránea** en el país, transformando desafíos legales en **oportunidades de crecimiento** para tu negocio.</p>
+                    </div>
+                    <div class="image-content">
+                        <img src="https://images.unsplash.com/photo-1549880816-d3369a19d5c4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                             alt="Equipo de consultores de HidroLegal revisando documentos legales y planos de agua, simbolizando gestión de trámites CONAGUA y consultoría hídrica."
+                             loading="lazy"> </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="servicios">
-        <div class="container">
-            <h2>Nuestros Servicios Especializados en **Trámites de Agua y Consultoría Hídrica**</h2>
-            <div class="services-grid">
-                <div class="service-card" id="concesion">
-                    <div class="icon"><i class="fas fa-file-alt"></i></div>
-                    <h3>Solicitud de **Concesión de Agua**</h3>
-                    <p>Gestión completa para la obtención de **permisos de uso de aguas nacionales** ante CONAGUA. Aseguramos la legalidad y agilidad de tu **permiso de pozo**.</p>
-                </div>
-                <div class="service-card" id="renovacion">
-                    <div class="icon"><i class="fas fa-redo-alt"></i></div>
-                    <h3>**Renovación de Títulos** y Permisos</h3>
-                    <p>Evita interrupciones: te apoyamos en la **renovación de títulos de concesión y asignación**, garantizando la continuidad de tus **derechos de agua** sin estrés.</p>
-                </div>
-                <div class="service-card" id="transmision">
-                    <div class="icon"><i class="fas fa-exchange-alt"></i></div>
-                    <h3>**Transmisión de Derechos** de Agua</h3>
-                    <p>Asesoría experta para la **transmisión de derechos de agua** entre particulares, garantizando un proceso transparente y legal bajo la **Ley de Aguas Nacionales**.</p>
-                </div>
-                <div class="service-card" id="memorias">
-                    <div class="icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Elaboración de **Memorias Técnicas de Pozos**</h3>
-                    <p>Desarrollo preciso de memorias técnicas para perforación, rehabilitación o aforo de **pozos de agua**, esenciales para tus **trámites CONAGUA**.</p>
-                </div>
-                <div class="service-card" id="regularizacion">
-                    <div class="icon"><i class="fas fa-check-circle"></i></div>
-                    <h3>**Regularización de Pozos** de Agua Existentes</h3>
-                    <p>Pon al día tu situación legal. Te guiamos en la **regularización de pozos** para evitar multas y asegurar el **uso legal del agua** en tu propiedad.</p>
-                </div>
-                <div class="service-card" id="dictamenes">
-                    <div class="icon"><i class="fas fa-gavel"></i></div>
-                    <h3>**Dictámenes Técnicos** y Legales **CONAGUA**</h3>
-                    <p>Ofrecemos dictámenes especializados sobre la viabilidad hídrica de proyectos y asesoría legal crucial para decisiones estratégicas sobre **agua subterránea**.</p>
-                </div>
-                <div class="service-card" id="auditoria">
-                    <div class="icon"><i class="fas fa-search-dollar"></i></div>
-                    <h3>**Auditoría Hídrica** y Cumplimiento</h3>
-                    <p>Análisis exhaustivo para identificar riesgos, optimizar el uso del agua y asegurar el **cumplimiento normativo** en tu empresa. Proactivamente **evita sanciones**.</p>
-                </div>
-                <div class="service-card" id="consultoria">
-                    <div class="icon"><i class="fas fa-handshake"></i></div>
-                    <h3>**Consultoría Legal Especializada** en Derecho de Aguas</h3>
-                    <p>Asesoría integral en **derecho de aguas en México**, resolviendo desafíos legales y brindando soporte continuo para tu **gestión hídrica**.</p>
+        <section id="servicios" aria-labelledby="servicios-heading">
+            <div class="container">
+                <h2 id="servicios-heading">Nuestros Servicios Especializados en <strong class="highlight">Trámites de Agua y Consultoría Hídrica</strong></h2>
+                <div class="services-grid">
+                    <div class="service-card" id="concesion">
+                        <div class="icon" aria-hidden="true"><i class="fas fa-file-alt"></i></div>
+                        <h3>Solicitud de <strong class="highlight">Concesión de Agua</strong></h3>
+                        <p>Gestión completa para la obtención de **permisos de uso de aguas nacionales** ante CONAGUA. Aseguramos la legalidad y agilidad de tu **permiso de pozo**.</p>
+                    </div>
+                    <div class="service-card" id="renovacion">
+                        <div class="icon" aria-hidden="true"><i class="fas fa-redo-alt"></i></div>
+                        <h3><strong class="highlight">Renovación de Títulos</strong> y Permisos</h3>
+                        <p>Evita interrupciones: te apoyamos en la **renovación de títulos de concesión y asignación**, garantizando la continuidad de tus **derechos de agua** sin estrés.</p>
+                    </div>
+                    <div class="service-card" id="transmision">
+                        <div class="icon" aria-hidden="true"><i class="fas fa-exchange-alt"></i></div>
+                        <h3><strong class="highlight">Transmisión de Derechos</strong> de Agua</h3>
+                        <p>Asesoría experta para la **transmisión de derechos de agua** entre particulares, garantizando un proceso transparente y legal bajo la **Ley de Aguas Nacionales**.</p>
+                    </div>
+                    <div class="service-card" id="memorias">
+                        <div class="icon" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
+                        <h3>Elaboración de <strong class="highlight">Memorias Técnicas de Pozos</strong></h3>
+                        <p>Desarrollo preciso de memorias técnicas para perforación, rehabilitación o aforo de **pozos de agua**, esenciales para tus **trámites CONAGUA**.</p>
+                    </div>
+                    <div class="service-card" id="regularizacion">
+                        <div class="icon" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
+                        <h3><strong class="highlight">Regularización de Pozos</strong> de Agua Existentes</h3>
+                        <p>Pon al día tu situación legal. Te guiamos en la **regularización de pozos** para evitar multas y asegurar el **uso legal del agua** en tu propiedad.</p>
+                    </div>
+                    <div class="service-card" id="dictamenes">
+                        <div class="icon" aria-hidden="true"><i class="fas fa-gavel"></i></div>
+                        <h3><strong class="highlight">Dictámenes Técnicos</strong> y Legales <strong class="highlight">CONAGUA</strong></h3>
+                        <p>Ofrecemos dictámenes especializados sobre la viabilidad hídrica de proyectos y asesoría legal crucial para decisiones estratégicas sobre **agua subterránea**.</p>
+                    </div>
+                    <div class="service-card" id="auditoria">
+                        <div class="icon" aria-hidden="true"><i class="fas fa-search-dollar"></i></div>
+                        <h3><strong class="highlight">Auditoría Hídrica</strong> y Cumplimiento</h3>
+                        <p>Análisis exhaustivo para identificar riesgos, optimizar el uso del agua y asegurar el **cumplimiento normativo** en tu empresa. Proactivamente **evita sanciones**.</p>
+                    </div>
+                    <div class="service-card" id="consultoria">
+                        <div class="icon" aria-hidden="true"><i class="fas fa-handshake"></i></div>
+                        <h3><strong class="highlight">Consultoría Legal Especializada</strong> en Derecho de Aguas</h3>
+                        <p>Asesoría integral en **derecho de aguas en México**, resolviendo desafíos legales y brindando soporte continuo para tu **gestión hídrica**.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="clientes-potenciales">
-        <div class="container">
-            <h2>¿A Quiénes Beneficiamos con Nuestros Servicios de **Trámites de Agua**?</h2>
-            <p style="text-align: center;">En HidroLegal Consultores, impulsamos el éxito de diversos sectores en México que requieren **permisos, concesiones y asesoría en gestión de agua**:</p>
-            <ul class="beneficiaries-list">
-                <li>**Agricultores** y Productores Agrícolas (Permisos de Riego, Pozos Agrícolas)</li>
-                <li>**Constructoras** y Desarrolladores Inmobiliarios (Uso de Agua en Proyectos, Fraccionamientos)</li>
-                <li>**Gobiernos Municipales** y Entidades Públicas (Gestión Hídrica Pública, Cumplimiento Normativo)</li>
-                <li>**Empresas Industriales** y de Servicios (Concesiones para Procesos, Descargas de Aguas Residuales)</li>
-                <li>**Perforadores** y Empresas de Topografía (Elaboración de Estudios Hidrológicos, Perforación de Pozos)</li>
-                <li>**Hoteles** y Desarrollos Turísticos (Aprovechamiento de Pozos Turísticos, Uso de Agua Recreativa)</li>
-                <li>**Fraccionamientos** y Desarrollos Habitacionales (Suministro de Agua Potable, Redes Hídricas)</li>
-                <li>**Propietarios de Pozos Particulares** (Regularización de Pozos Domésticos, Uso Familiar)</li>
-            </ul>
-        </div>
-    </section>
+        <section id="clientes-potenciales" aria-labelledby="clientes-heading">
+            <div class="container">
+                <h2 id="clientes-heading">¿A Quiénes Beneficiamos con Nuestros Servicios de <strong class="highlight">Trámites de Agua</strong>?</h2>
+                <p style="text-align: center;">En HidroLegal Consultores, impulsamos el éxito de diversos sectores en México que requieren **permisos, concesiones y asesoría en gestión de agua**:</p>
+                <ul class="beneficiaries-list">
+                    <li>**Agricultores** y Productores Agrícolas (Permisos de Riego, Pozos Agrícolas)</li>
+                    <li>**Constructoras** y Desarrolladores Inmobiliarios (Uso de Agua en Proyectos, Fraccionamientos)</li>
+                    <li>**Gobiernos Municipales** y Entidades Públicas (Gestión Hídrica Pública, Cumplimiento Normativo)</li>
+                    <li>**Empresas Industriales** y de Servicios (Concesiones para Procesos, Descargas de Aguas Residuales)</li>
+                    <li>**Perforadores** y Empresas de Topografía (Elaboración de Estudios Hidrológicos, Perforación de Pozos)</li>
+                    <li>**Hoteles** y Desarrollos Turísticos (Aprovechamiento de Pozos Turísticos, Uso de Agua Recreativa)</li>
+                    <li>**Fraccionamientos** y Desarrollos Habitacionales (Suministro de Agua Potable, Redes Hídricas)</li>
+                    <li>**Propietarios de Pozos Particulares** (Regularización de Pozos Domésticos, Uso Familiar)</li>
+                </ul>
+            </div>
+        </section>
 
-    <section id="testimonios">
-        <div class="container">
-            <h2>Lo que Dicen Nuestros Clientes Sobre **HidroLegal Consultores**</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p>“HidroLegal Consultores nos brindó una asesoría excepcional. Gracias a su expertise, logramos **regularizar nuestro pozo** en tiempo récord, evitando multas y asegurando la continuidad de nuestras operaciones agrícolas. Su conocimiento es inigualable.”</p>
-                    <div class="author">— Juan Pérez, Agricultor, Querétaro.</div>
-                </div>
-                <div class="testimonial-card">
-                    <p>“El equipo de HidroLegal es sumamente profesional y eficiente. Su gestión para la **transmisión de nuestros derechos de agua** fue impecable y transparente. Son el referente para cualquier **trámite CONAGUA**.”</p>
-                    <div class="author">— María Gómez, Desarrolladora Inmobiliaria, Jalisco.</div>
-                </div>
-                <div class="testimonial-card">
-                    <p>“Contar con HidroLegal Consultores ha sido clave para nuestra empresa. Su **auditoría hídrica** nos permitió optimizar el uso del agua y asegurar el **cumplimiento de todas las normativas** ambientales, generando ahorros significativos.”</p>
-                    <div class="author">— Carlos Ruiz, Gerente Industrial, Nuevo León.</div>
+        <section id="testimonios" aria-labelledby="testimonios-heading">
+            <div class="container">
+                <h2 id="testimonios-heading">Lo que Dicen Nuestros Clientes Sobre <strong class="highlight">HidroLegal Consultores</strong></h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p>“HidroLegal Consultores nos brindó una asesoría excepcional. Gracias a su expertise, logramos **regularizar nuestro pozo** en tiempo récord, evitando multas y asegurando la continuidad de nuestras operaciones agrícolas. Su conocimiento es inigualable.”</p>
+                        <div class="author">— Juan Pérez, Agricultor, Querétaro.</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>“El equipo de HidroLegal es sumamente profesional y eficiente. Su gestión para la **transmisión de nuestros derechos de agua** fue impecable y transparente. Son el referente para cualquier **trámite CONAGUA**.”</p>
+                        <div class="author">— María Gómez, Desarrolladora Inmobiliaria, Jalisco.</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>“Contar con HidroLegal Consultores ha sido clave para nuestra empresa. Su **auditoría hídrica** nos permitió optimizar el uso del agua y asegurar el **cumplimiento de todas las normativas** ambientales, generando ahorros significativos.”</p>
+                        <div class="author">— Carlos Ruiz, Gerente Industrial, Nuevo León.</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="cta-section">
-        <div class="container">
-            <h3>No dejes la **gestión de tus derechos de agua** al azar, **protege tu inversión** hoy.</h3>
-            <p>Confía en los expertos. Estamos aquí para simplificar tus **trámites CONAGUA** y asegurar el éxito legal y operativo de tu proyecto.</p>
-            <a href="#contacto" class="btn-primary"><i class="fas fa-phone-alt"></i> ¡Contáctanos y Obtén Asesoría Ahora!</a>
-        </div>
-    </section>
+        <section class="cta-section" aria-labelledby="cta-heading">
+            <div class="container">
+                <h3 id="cta-heading">No dejes la <strong class="highlight">gestión de tus derechos de agua</strong> al azar, <strong class="highlight">protege tu inversión</strong> hoy.</h3>
+                <p>Confía en los expertos. Estamos aquí para simplificar tus **trámites CONAGUA** y asegurar el éxito legal y operativo de tu proyecto.</p>
+                <a href="#contacto" class="btn-primary" aria-label="Contáctanos y Obtén Asesoría Ahora">
+                    <i class="fas fa-phone-alt"></i> ¡Contáctanos y Obtén Asesoría Ahora!
+                </a>
+            </div>
+        </section>
 
-    <section id="faq">
-        <div class="container">
-            <h2>**Preguntas Frecuentes** sobre Trámites y **Derechos de Agua en México**</h2>
-            <div class="faq-item">
-                <div class="faq-question">
-                    ¿Por qué es importante **regularizar mis derechos de agua** en México?
-                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+        <section id="faq" aria-labelledby="faq-heading">
+            <div class="container">
+                <h2 id="faq-heading"><strong class="highlight">Preguntas Frecuentes</strong> sobre Trámites y <strong class="highlight">Derechos de Agua en México</strong></h2>
+                <div class="faq-item">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-1">
+                        ¿Por qué es importante <strong class="highlight">regularizar mis derechos de agua</strong> en México?
+                        <span class="arrow" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-1" role="region" aria-hidden="true">
+                        <p>La **regularización de tus derechos de agua** es crucial para operar dentro del marco legal establecido por la **Ley de Aguas Nacionales**. Te permite evitar costosas sanciones, multas e incluso la clausura de pozos por parte de CONAGUA. Al regularizar, aseguras la **seguridad jurídica** y la continuidad de tu aprovechamiento hídrico, protegiendo tu inversión y el futuro de tu proyecto.</p>
+                    </div>
                 </div>
-                <div class="faq-answer">
-                    <p>La **regularización de tus derechos de agua** es crucial para operar dentro del marco legal establecido por la **Ley de Aguas Nacionales**. Te permite evitar costosas sanciones, multas e incluso la clausura de pozos por parte de CONAGUA. Al regularizar, aseguras la **seguridad jurídica** y la continuidad de tu aprovechamiento hídrico, protegiendo tu inversión y el futuro de tu proyecto.</p>
+                <div class="faq-item">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-2">
+                        ¿Cuánto tiempo tarda un <strong class="highlight">trámite de concesión de agua</strong> ante CONAGUA?
+                        <span class="arrow" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-2" role="region" aria-hidden="true">
+                        <p>El tiempo para un **trámite de concesión de agua** puede variar significativamente, influenciado por la complejidad del proyecto, la disponibilidad de información y la carga de trabajo de las oficinas de **CONAGUA**. Sin embargo, en HidroLegal Consultores, nos especializamos en agilizar el proceso al máximo. Esto lo logramos mediante la presentación correcta y completa de la documentación desde el primer intento y un seguimiento constante y proactivo con las autoridades. Durante tu asesoría inicial, te daremos una estimación más precisa basada en las características específicas de tu **permiso de pozo**.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-3">
+                        ¿Necesito una <strong class="highlight">memoria técnica</strong> para mi pozo existente o nuevo?
+                        <span class="arrow" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-3" role="region" aria-hidden="true">
+                        <p>Sí, la elaboración de una **memoria técnica** es un requisito fundamental y obligatorio en muchos casos para la perforación, rehabilitación, aforo y, especialmente, la **regularización de pozos** de agua. Este documento técnico describe detalladamente las características geohidrológicas de la obra, el volumen de extracción solicitado y el uso del **agua subterránea**. Es un pilar clave en tus **trámites de agua** ante CONAGUA para demostrar la viabilidad y legalidad de tu aprovechamiento.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-4">
+                        ¿Ofrecen servicios de <strong class="highlight">consultoría hídrica</strong> a nivel nacional en México?
+                        <span class="arrow" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-4" role="region" aria-hidden="true">
+                        <p>¡Absolutamente! Aunque nuestra base operativa se encuentra en la Ciudad de México, nuestro equipo de expertos en **derecho de aguas** y **gestión hídrica** está plenamente capacitado y tiene la experiencia para brindar asesoría y gestionar **trámites de aguas subterráneas** y superficiales en cualquier estado y región de la República Mexicana. Nuestra metodología nos permite trabajar de forma remota y eficiente, garantizando el mismo nivel de calidad y compromiso sin importar tu ubicación en el país.</p>
+                    </div>
                 </div>
             </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    ¿Cuánto tiempo tarda un **trámite de concesión de agua** ante CONAGUA?
-                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>El tiempo para un **trámite de concesión de agua** puede variar significativamente, influenciado por la complejidad del proyecto, la disponibilidad de información y la carga de trabajo de las oficinas de **CONAGUA**. Sin embargo, en HidroLegal Consultores, nos especializamos en agilizar el proceso al máximo. Esto lo logramos mediante la presentación correcta y completa de la documentación desde el primer intento y un seguimiento constante y proactivo con las autoridades. Durante tu asesoría inicial, te daremos una estimación más precisa basada en las características específicas de tu **permiso de pozo**.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    ¿Necesito una **memoria técnica** para mi pozo existente o nuevo?
-                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>Sí, la elaboración de una **memoria técnica** es un requisito fundamental y obligatorio en muchos casos para la perforación, rehabilitación, aforo y, especialmente, la **regularización de pozos** de agua. Este documento técnico describe detalladamente las características geohidrológicas de la obra, el volumen de extracción solicitado y el uso del **agua subterránea**. Es un pilar clave en tus **trámites de agua** ante CONAGUA para demostrar la viabilidad y legalidad de tu aprovechamiento.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    ¿Ofrecen servicios de **consultoría hídrica** a nivel nacional en México?
-                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>¡Absolutamente! Aunque nuestra base operativa se encuentra en la Ciudad de México, nuestro equipo de expertos en **derecho de aguas** y **gestión hídrica** está plenamente capacitado y tiene la experiencia para brindar asesoría y gestionar **trámites de aguas subterráneas** y superficiales en cualquier estado y región de la República Mexicana. Nuestra metodología nos permite trabajar de forma remota y eficiente, garantizando el mismo nivel de calidad y compromiso sin importar tu ubicación en el país.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contacto">
-        <div class="container">
-            <h2>Hablemos de tu Proyecto de **Agua Subterránea** y Trámites **CONAGUA**</h2>
-            <p style="text-align: center;">Estamos listos para escucharte y ofrecerte soluciones personalizadas.</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="icon"><i class="fas fa-envelope"></i></div>
-                    <h3>Correo Electrónico</h3>
-                    <p><a href="mailto:contacto@hidrolegal.mx">contacto@hidrolegal.mx</a></p>
-                </div>
-                <div class="contact-item">
-                    <div class="icon"><i class="fas fa-phone-alt"></i></div>
-                    <h3>Teléfono</h3>
-                    <p><a href="tel:+525512345678">+52 55 1234 5678</a></p>
-                </div>
-                <div class="contact-item">
-                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <h3>Ubicación Central</h3>
-                    <p>Ciudad de México, México</p>
-                    <p>¡Atención y Servicio a **Nivel Nacional**!</p>
-                </div>
-                <div class="contact-item">
-                    <div class="icon"><i class="fas fa-clock"></i></div>
-                    <h3>Horario de Atención</h3>
-                    <p>Lunes a Viernes</p>
-                    <p>9:00 a 18:00 hrs (Hora del Centro de México)</p>
+        <section id="contacto" aria-labelledby="contacto-heading">
+            <div class="container">
+                <h2 id="contacto-heading">Hablemos de tu Proyecto de <strong class="highlight">Agua Subterránea</strong> y Trámites <strong class="highlight">CONAGUA</strong></h2>
+                <p style="text-align: center;">Estamos listos para escucharte y ofrecerte soluciones personalizadas.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon" aria-hidden="true"><i class="fas fa-envelope"></i></div>
+                        <h3>Correo Electrónico</h3>
+                        <p><a href="mailto:contacto@hidrolegal.mx" aria-label="Enviar correo a contacto@hidrolegal.mx">contacto@hidrolegal.mx</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon" aria-hidden="true"><i class="fas fa-phone-alt"></i></div>
+                        <h3>Teléfono</h3>
+                        <p><a href="tel:+525512345678" aria-label="Llamar a HidroLegal Consultores">+52 55 1234 5678</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3>Ubicación Central</h3>
+                        <p>Ciudad de México, México</p>
+                        <p>¡Atención y Servicio a <strong class="highlight">Nivel Nacional</strong>!</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon" aria-hidden="true"><i class="fas fa-clock"></i></div>
+                        <h3>Horario de Atención</h3>
+                        <p>Lunes a Viernes</p>
+                        <p>9:00 a 18:00 hrs (Hora del Centro de México)</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 HidroLegal Consultores. Todos los derechos reservados. | **Consultoría y Trámites de Agua en México**</p>
-            <p>Diseño y Desarrollo con pasión por la **Gestión Hídrica Sustentable**.</p>
+            <p>&copy; 2025 HidroLegal Consultores. Todos los derechos reservados. | <strong class="highlight">Consultoría y Trámites de Agua en México</strong></p>
+            <p>Diseño y Desarrollo con pasión por la <strong class="highlight">Gestión Hídrica Sustentable</strong>.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/5215512345678" class="whatsapp bounce" target="_blank" title="Contáctanos por WhatsApp para Trámites de Agua en México">
+    <a href="https://wa.me/5215512345678" class="whatsapp bounce" target="_blank" title="Contáctanos por WhatsApp para Trámites de Agua en México" aria-label="Abrir chat de WhatsApp con HidroLegal Consultores">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        // JavaScript para el menú de Preguntas Frecuentes (FAQ)
+        // JavaScript para funcionalidad de Preguntas Frecuentes (FAQ)
         document.querySelectorAll('.faq-question').forEach(item => {
             item.addEventListener('click', event => {
                 const faqItem = item.closest('.faq-item');
+                const faqAnswer = faqItem.querySelector('.faq-answer');
+                const isExpanded = faqItem.classList.contains('active');
+
+                // Toggle the 'active' class on the FAQ item
                 faqItem.classList.toggle('active');
+                
+                // Update ARIA attributes for accessibility
+                item.setAttribute('aria-expanded', !isExpanded);
+                faqAnswer.setAttribute('aria-hidden', isExpanded);
+
+                // Adjust max-height for smooth transition
+                if (faqItem.classList.contains('active')) {
+                    faqAnswer.style.maxHeight = faqAnswer.scrollHeight + 'px';
+                } else {
+                    faqAnswer.style.maxHeight = '0';
+                }
+            });
+
+            // Allow FAQ items to be opened/closed with Enter key
+            item.addEventListener('keypress', event => {
+                if (event.key === 'Enter' || event.keyCode === 13) {
+                    item.click();
+                }
             });
         });
 
         // JavaScript para el efecto de scroll en la navegación (sticky y cambio de estilo)
         const nav = document.querySelector('nav');
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
+            if (window.scrollY > 50) { // Si el scroll es mayor a 50px
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
             }
         });
 
-        // JavaScript para el ScrollSpy (resaltar enlace activo en navegación)
+        // JavaScript para ScrollSpy (resaltar enlace activo en navegación)
         const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('nav .nav-links a:not(.menu a)'); // Excluir enlaces del submenú principal
+        const navLinks = document.querySelectorAll('nav .nav-links a:not(.menu .submenu a)'); // Excluir enlaces del submenú
 
-        const observer = new IntersectionObserver((entries) => {
+        const observerOptions = {
+            rootMargin: '-50% 0px -50% 0px', // Detecta cuando la sección está en el medio de la vista
+            threshold: 0 // Cuando al menos 1px del target entra en el rootMargin
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     navLinks.forEach(link => {
                         link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${entry.target.id}`) {
-                            link.classList.add('active');
-                        }
                     });
+                    // Busca el enlace principal que apunta a la sección activa
+                    const mainNavLink = document.querySelector(`nav .nav-links > a[href="#${entry.target.id}"]`);
+                    if (mainNavLink) {
+                        mainNavLink.classList.add('active');
+                    } else {
+                        // Si la sección activa es parte de un submenú (ej. un servicio específico)
+                        const submenuLink = document.querySelector(`nav .nav-links .submenu a[href="#${entry.target.id}"]`);
+                        if (submenuLink) {
+                            const parentMenuLink = submenuLink.closest('.menu').querySelector('a');
+                            if (parentMenuLink) {
+                                parentMenuLink.classList.add('active');
+                            }
+                        }
+                    }
                 }
             });
-        }, {
-            rootMargin: '-50% 0px -50% 0px' // Detecta cuando la sección está en el medio de la vista
-        });
+        }, observerOptions);
 
         sections.forEach(section => {
-            observer.observe(section);
+            sectionObserver.observe(section);
         });
 
         // JavaScript para animación de elementos al scroll (fade-in)
@@ -1282,30 +1318,54 @@
             appearOnScroll.observe(fader);
         });
 
-        // JavaScript para el botón hamburguesa (menú móvil)
+        // JavaScript para el botón hamburguesa (menú móvil) y funcionalidad de submenú
         const navToggle = document.querySelector('.nav-toggle');
-        const navLinksContainer = document.querySelector('.nav-links'); // El contenedor de todos los enlaces
+        const navLinksContainer = document.querySelector('.nav-links');
 
         navToggle.addEventListener('click', () => {
-            navLinksContainer.classList.toggle('active'); // Toggle en el contenedor
-            // Para cerrar submenús abiertos al cerrar el menú principal
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+            navLinksContainer.classList.toggle('active'); // Toggle en el contenedor principal
+            navLinksContainer.classList.toggle('open'); // También en el contenedor principal
+            nav.classList.toggle('open-menu'); // Clase para el nav para estilos adicionales
+
             if (!navLinksContainer.classList.contains('active')) {
+                // Si el menú se está cerrando, cerrar cualquier submenú abierto
                 document.querySelectorAll('.menu.active').forEach(menu => {
                     menu.classList.remove('active');
+                    const submenu = menu.querySelector('.submenu');
+                    if (submenu) submenu.style.maxHeight = '0';
+                    const parentMenuLink = menu.querySelector('a[aria-haspopup="true"]');
+                    if (parentMenuLink) parentMenuLink.setAttribute('aria-expanded', 'false');
                 });
             }
         });
 
-        // Manejar los clics en los menús principales para móviles
+        // Manejar los clics en los enlaces principales del menú con submenú (para móvil)
         document.querySelectorAll('nav .nav-links > .menu > a').forEach(menuLink => {
             menuLink.addEventListener('click', (e) => {
                 if (window.innerWidth <= 767) { // Solo para pantallas móviles
-                    e.preventDefault(); // Prevenir navegación directa
+                    e.preventDefault(); // Prevenir navegación directa para abrir/cerrar submenú
                     const parentMenu = menuLink.closest('.menu');
-                    parentMenu.classList.toggle('active'); // Activa/desactiva el menú
                     const submenu = parentMenu.querySelector('.submenu');
+                    const isExpanded = menuLink.getAttribute('aria-expanded') === 'true' || false;
+
+                    // Cerrar otros submenús si están abiertos (comportamiento de acordeón)
+                    document.querySelectorAll('.menu.active').forEach(openMenu => {
+                        if (openMenu !== parentMenu) {
+                            openMenu.classList.remove('active');
+                            const openSubmenu = openMenu.querySelector('.submenu');
+                            if (openSubmenu) openSubmenu.style.maxHeight = '0';
+                            const openMenuLink = openMenu.querySelector('a[aria-haspopup="true"]');
+                            if (openMenuLink) openMenuLink.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+
+                    // Toggle el menú actual
+                    parentMenu.classList.toggle('active');
+                    menuLink.setAttribute('aria-expanded', !isExpanded);
+
                     if (submenu) {
-                        // Toggle la visibilidad del submenú con una transición
                         if (parentMenu.classList.contains('active')) {
                             submenu.style.maxHeight = submenu.scrollHeight + 'px';
                         } else {
@@ -1314,17 +1374,31 @@
                     }
                 }
             });
+            // Permitir abrir/cerrar submenú con Enter en teclado
+            menuLink.addEventListener('keypress', event => {
+                if (event.key === 'Enter' || event.keyCode === 13) {
+                    menuLink.click();
+                }
+            });
         });
 
-        // Cerrar el menú móvil cuando se hace clic en un enlace
+        // Cerrar el menú móvil cuando se hace clic en cualquier enlace dentro del nav
         document.querySelectorAll('nav .nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 767) {
+                    // Cierra el contenedor principal del menú
                     navLinksContainer.classList.remove('active');
+                    navLinksContainer.classList.remove('open');
+                    nav.classList.remove('open-menu');
+                    navToggle.setAttribute('aria-expanded', 'false');
+
+                    // Cierra cualquier submenú que pudiera estar abierto
                     document.querySelectorAll('.menu.active').forEach(menu => {
                         menu.classList.remove('active');
                         const submenu = menu.querySelector('.submenu');
                         if (submenu) submenu.style.maxHeight = '0';
+                        const parentMenuLink = menu.querySelector('a[aria-haspopup="true"]');
+                        if (parentMenuLink) parentMenuLink.setAttribute('aria-expanded', 'false');
                     });
                 }
             });
