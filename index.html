@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HidroLegal Consultores</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       margin: 0;
       padding: 0;
       background: #f4f4f4;
@@ -24,6 +27,9 @@
       background-color: #0a9396;
       padding: 15px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     .menu {
       display: inline-block;
@@ -38,8 +44,8 @@
       top: 100%;
       left: 0;
       background-color: #0a9396;
-      min-width: 200px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      min-width: 220px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
     .submenu a {
       display: block;
@@ -47,38 +53,42 @@
       color: white;
       text-decoration: none;
       text-align: left;
+      cursor: pointer;
     }
     .submenu a:hover {
       background-color: #007f7f;
     }
-    nav a {
+    nav > a {
       color: white;
       margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
     }
-    nav a:hover {
+    nav > a:hover {
       text-decoration: underline;
     }
-    section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
       background: white;
+      padding: 40px 30px;
+      box-shadow: 0 0 12px rgb(0 0 0 / 0.1);
+      min-height: 400px;
     }
+    h1,
     h2 {
       color: #005f73;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
+    }
+    p {
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
     ul {
-      list-style: none;
-      padding: 0;
+      padding-left: 20px;
+      margin-bottom: 20px;
     }
-    ul li::before {
-      content: "✔️ ";
+    ul li::marker {
       color: #0a9396;
     }
     footer {
@@ -88,26 +98,10 @@
       padding: 30px 20px;
       margin-top: 40px;
     }
-    .cta {
-      text-align: center;
-      background: #ee9b00;
-      color: #fff;
-      padding: 40px 20px;
-    }
-    .cta h3 {
-      margin: 0 0 15px 0;
-    }
-    .cta a {
-      background: #005f73;
-      color: white;
-      padding: 12px 25px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .cta a:hover {
-      background: #0a9396;
+    #contacto {
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid #ccc;
     }
   </style>
 </head>
@@ -118,50 +112,263 @@
   </header>
   <nav>
     <div class="menu">
-      <a href="#">Servicios</a>
-      <div class="submenu">
-        <a href="servicios/concesiones.html" target="_blank">Solicitud de concesión</a>
-        <a href="servicios/renovacion.html" target="_blank">Renovación de títulos</a>
-        <a href="servicios/transmision.html" target="_blank">Transmisión de derechos</a>
-        <a href="servicios/memorias.html" target="_blank">Memorias técnicas</a>
-        <a href="servicios/regularizacion.html" target="_blank">Regularización de pozos</a>
-        <a href="servicios/dictamenes.html" target="_blank">Dictámenes técnicos</a>
-        <a href="servicios/auditoria.html" target="_blank">Auditoría hídrica</a>
-        <a href="servicios/consultoria.html" target="_blank">Consultoría legal</a>
+      <a href="javascript:void(0)">Servicios ▼</a>
+      <div class="submenu" aria-label="submenu servicios">
+        <a onclick="showService('concesion')">Solicitud de concesión</a>
+        <a onclick="showService('renovacion')">Renovación de títulos</a>
+        <a onclick="showService('transmision')">Transmisión de derechos</a>
+        <a onclick="showService('memorias')">Memorias técnicas</a>
+        <a onclick="showService('regularizacion')">Regularización de pozos</a>
+        <a onclick="showService('dictamenes')">Dictámenes técnicos</a>
+        <a onclick="showService('auditoria')">Auditoría hídrica</a>
+        <a onclick="showService('consultoria')">Consultoría legal</a>
       </div>
     </div>
     <a href="#clientes">Clientes</a>
     <a href="#contacto">Contacto</a>
   </nav>
-  <section>
-    <h2>Importancia de los trámites de aguas subterráneas</h2>
-    <p>Realizar trámites relacionados con el uso y aprovechamiento del agua subterránea no solo es un requisito legal establecido por la Ley de Aguas Nacionales, sino también un acto de ética y responsabilidad social. Cumplir con la normativa ayuda a garantizar un uso sostenible del recurso, prevenir conflictos por el uso del agua y proteger los derechos tanto de particulares como del interés público.</p>
-    <p>En HidroLegal Consultores orientamos a nuestros clientes a cumplir cabalmente con sus obligaciones legales, asegurando seguridad jurídica y fomentando una cultura hídrica responsable.</p>
-  </section>
-  <section id="clientes">
-    <h2>¿A quiénes asesoramos?</h2>
-    <ul>
-      <li>Agricultores y productores</li>
-      <li>Constructoras y desarrolladores</li>
-      <li>Gobiernos municipales</li>
-      <li>Empresas industriales y de servicios</li>
-      <li>Perforadores y topógrafos</li>
-    </ul>
-  </section>
-  <section class="cta">
-    <h3>¿Listo para regularizar tus derechos de agua?</h3>
-    <p>Agenda una asesoría gratuita con nuestros expertos.</p>
-    <a href="#contacto">Contáctanos ahora</a>
-  </section>
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p><strong>Correo:</strong> contacto@hidrolegal.mx</p>
-    <p><strong>Teléfono:</strong> +52 55 1234 5678</p>
-    <p><strong>Ubicación:</strong> Ciudad de México, disponible para todo el país.</p>
-    <p><strong>Horario:</strong> Lunes a Viernes de 9:00 a 18:00 hrs</p>
-  </section>
+
+  <main>
+    <section id="home">
+      <h2>Importancia de los trámites de aguas subterráneas</h2>
+      <p>
+        Realizar trámites relacionados con el uso y aprovechamiento del agua subterránea no solo es un requisito legal establecido por la Ley de Aguas Nacionales, sino también un acto de ética y responsabilidad social.
+      </p>
+      <p>
+        Cumplir con la normativa ayuda a garantizar un uso sostenible del recurso, prevenir conflictos por el uso del agua y proteger los derechos tanto de particulares como del interés público.
+      </p>
+      <p>
+        En HidroLegal Consultores orientamos a nuestros clientes a cumplir cabalmente con sus obligaciones legales, asegurando seguridad jurídica y fomentando una cultura hídrica responsable.
+      </p>
+    </section>
+
+    <!-- Servicios -->
+    <section id="concesion" class="service" style="display:none;">
+      <h2>Solicitud de Concesión de Aguas Subterráneas</h2>
+      <p>Trámite completo para obtener un título de concesión ante la CONAGUA.</p>
+      <h3>¿Qué es la solicitud de concesión?</h3>
+      <p>
+        Es el procedimiento mediante el cual una persona física o moral solicita ante la Comisión Nacional del Agua (CONAGUA) el derecho para usar aguas subterráneas. Este derecho se formaliza mediante un título de concesión con vigencia legal.
+      </p>
+      <h3>¿Por qué es importante realizar este trámite?</h3>
+      <ul>
+        <li>Evita sanciones legales por uso no autorizado de agua.</li>
+        <li>Brinda certeza jurídica sobre el aprovechamiento del recurso.</li>
+        <li>Permite acceder a beneficios y programas gubernamentales.</li>
+        <li>Fortalece la responsabilidad social y ambiental de quien lo solicita.</li>
+      </ul>
+      <h3>Requisitos principales</h3>
+      <ul>
+        <li>Identificación del solicitante o representante legal</li>
+        <li>Documentos de propiedad o posesión del terreno</li>
+        <li>Coordenadas UTM del pozo</li>
+        <li>Estudios de disponibilidad del acuífero</li>
+        <li>Memoria técnica justificativa</li>
+      </ul>
+      <h3>¿Cómo te apoyamos en HidroLegal?</h3>
+      <p>
+        Nos encargamos de todo el proceso: desde la recopilación de documentación, elaboración de la memoria técnica, trámites ante CONAGUA y seguimiento hasta obtener la resolución. Nuestro equipo técnico y legal trabaja bajo estrictos estándares de calidad y ética profesional.
+      </p>
+      <p>
+        ¿Tienes dudas sobre si tu pozo o terreno es elegible para concesión? <a href="#contacto">Contáctanos</a> para una evaluación gratuita.
+      </p>
+    </section>
+
+    <section id="renovacion" class="service" style="display:none;">
+      <h2>Renovación de Títulos de Concesión</h2>
+      <p>Gestión para extender la vigencia de tus títulos ante CONAGUA.</p>
+      <h3>¿Qué es la renovación de títulos?</h3>
+      <p>
+        Proceso para solicitar ante CONAGUA la ampliación del período de vigencia de un título de concesión que está próximo a vencer, asegurando la continuidad legal del uso del agua subterránea.
+      </p>
+      <h3>¿Por qué es importante?</h3>
+      <ul>
+        <li>Evita interrupciones en el uso autorizado del agua.</li>
+        <li>Garantiza el cumplimiento legal y evita sanciones.</li>
+        <li>Permite actualizar datos y condiciones del título.</li>
+      </ul>
+      <h3>¿Cómo te apoyamos?</h3>
+      <p>
+        Te asesoramos en la recopilación de documentos y realizamos la gestión completa ante CONAGUA para la renovación oportuna de tus títulos.
+      </p>
+      <p>
+        ¿Quieres más información? <a href="#contacto">Contáctanos</a>.
+      </p>
+    </section>
+
+    <section id="transmision" class="service" style="display:none;">
+      <h2>Transmisión de Derechos de Uso de Agua</h2>
+      <p>Trámite para transferir derechos de concesión entre particulares.</p>
+      <h3>¿Qué es la transmisión de derechos?</h3>
+      <p>
+        Procedimiento para ceder o transferir total o parcialmente los derechos de uso de agua de un título de concesión a otra persona física o moral.
+      </p>
+      <h3>¿Por qué es importante?</h3>
+      <ul>
+        <li>Formaliza legalmente la transferencia de derechos.</li>
+        <li>Evita conflictos futuros y sanciones.</li>
+        <li>Actualiza registros oficiales ante CONAGUA.</li>
+      </ul>
+      <h3>¿Cómo te apoyamos?</h3>
+      <p>
+        Gestionamos la documentación y realizamos los trámites necesarios para una transmisión correcta y conforme a la ley.
+      </p>
+      <p>
+        ¿Tienes dudas? <a href="#contacto">Contáctanos</a>.
+      </p>
+    </section>
+
+    <section id="memorias" class="service" style="display:none;">
+      <h2>Elaboración de Memorias Técnicas</h2>
+      <p>Documentos técnicos que sustentan solicitudes y estudios ante CONAGUA.</p>
+      <h3>¿Qué es una memoria técnica?</h3>
+      <p>
+        Informe detallado que describe las características técnicas, estudios y justificaciones sobre el uso del agua subterránea.
+      </p>
+      <h3>¿Por qué es importante?</h3>
+      <ul>
+        <li>Fundamenta legalmente los trámites y solicitudes.</li>
+        <li>Demuestra el cumplimiento técnico de la obra.</li>
+        <li>Es requisito indispensable para concesiones y dictámenes.</li>
+      </ul>
+      <h3>¿Cómo te apoyamos?</h3>
+      <p>
+        Elaboramos memorias técnicas profesionales elaboradas por especialistas en hidrogeología y normatividad.
+      </p>
+      <p>
+        ¿Interesado? <a href="#contacto">Contáctanos</a>.
+      </p>
+    </section>
+
+    <section id="regularizacion" class="service" style="display:none;">
+      <h2>Regularización de Pozos</h2>
+      <p>Proceso para legalizar pozos y obras hidráulicas ante CONAGUA.</p>
+      <h3>¿Qué es la regularización de pozos?</h3>
+      <p>
+        Trámite para registrar y obtener permisos de pozos existentes que no cuentan con la autorización correspondiente.
+      </p>
+      <h3>¿Por qué es importante?</h3>
+      <ul>
+        <li>Evita sanciones por pozos irregulares.</li>
+        <li>Garantiza el uso legal y responsable del agua.</li>
+        <li>Actualiza registros oficiales.</li>
+      </ul>
+      <h3>¿Cómo te apoyamos?</h3>
+      <p>
+        Te asesoramos para regularizar tus pozos con toda la documentación y trámite necesario.
+      </p>
+      <p>
+        ¿Quieres asesoría? <a href="#contacto">Contáctanos</a>.
+      </p>
+    </section>
+
+    <section id="dictamenes" class="service" style="display:none;">
+      <h2>Dictámenes Técnicos de Disponibilidad</h2>
+      <p>Estudios que determinan la disponibilidad del agua subterránea.</p>
+      <h3>¿Qué es un dictamen técnico?</h3>
+      <p>
+        Evaluación técnica realizada para comprobar la existencia y capacidad del acuífero para abastecer nuevas concesiones o usos.
+      </p>
+      <h3>¿Por qué es importante?</h3>
+      <ul>
+        <li>Garantiza un uso sustentable y planeado del agua.</li>
+        <li>Evita sobreexplotación y daños al acuífero.</li>
+        <li>Es requisito para autorizaciones y permisos.</li>
+      </ul>
+      <h3>¿Cómo te apoyamos?</h3>
+      <p>
+        Elaboramos dictámenes confiables y oficiales con base en estudios técnicos y normativos.
+      </p>
+      <p>
+        ¿Consulta? <a href="#contacto">Contáctanos</a>.
+      </p>
+    </section>
+
+    <section id="auditoria" class="service" style="display:none;">
+      <h2>Auditoría y Cumplimiento Hídrico</h2>
+      <p>Revisión y verificación del cumplimiento legal en el uso del agua.</p>
+      <h3>¿Qué es una auditoría hídrica?</h3>
+      <p>
+        Inspección detallada para asegurar que las operaciones y el uso del agua cumplan con la legislación vigente y normas técnicas.
+      </p>
+      <h3>¿Por qué es importante?</h3>
+      <ul>
+        <li>Identifica riesgos y áreas de mejora.</li>
+        <li>Previene sanciones y multas.</li>
+        <li>Fortalece la gestión responsable del recurso.</li>
+      </ul>
+      <h3>¿Cómo te apoyamos?</h3>
+      <p>
+        Realizamos auditorías especializadas y entregamos reportes claros para la toma de decisiones.
+      </p>
+      <p>
+        ¿Quieres agendar una auditoría? <a href="#contacto">Contáctanos</a>.
+      </p>
+    </section>
+
+    <section id="consultoria" class="service" style="display:none;">
+      <h2>Consultoría Legal y Capacitación</h2>
+      <p>Asesoría integral y formación para el cumplimiento normativo.</p>
+      <h3>¿Qué ofrecemos?</h3>
+      <p>
+        Servicios de consultoría legal especializada en aguas subterráneas y programas de capacitación para personal técnico y administrativo.
+      </p>
+      <h3>¿Por qué es importante?</h3>
+      <ul>
+        <li>Mejora el cumplimiento normativo y operativo.</li>
+        <li>Fomenta una cultura de responsabilidad hídrica.</li>
+        <li>Reduce riesgos legales y administrativos.</li>
+      </ul>
+      <h3>¿Cómo te apoyamos?</h3>
+      <p>
+        Diseñamos planes personalizados y capacitamos a tu equipo para una gestión eficiente y legal del agua.
+      </p>
+      <p>
+        ¿Interesado? <a href="#contacto">Contáctanos</a>.
+      </p>
+    </section>
+
+    <section id="clientes">
+      <h2>¿A quiénes asesoramos?</h2>
+      <ul>
+        <li>Agricultores y productores</li>
+        <li>Constructoras y desarrolladores</li>
+        <li>Gobiernos municipales</li>
+        <li>Empresas industriales y de servicios</li>
+        <li>Perforadores y topógrafos</li>
+      </ul>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p><strong>Correo:</strong> contacto@hidrolegal.mx</p>
+      <p><strong>Teléfono:</strong> +52 55 1234 5678</p>
+      <p><strong>Ubicación:</strong> Ciudad de México, disponible para todo el país.</p>
+      <p><strong>Horario:</strong> Lunes a Viernes de 9:00 a 18:00 hrs</p>
+    </section>
+  </main>
+
   <footer>
     <p>&copy; 2025 HidroLegal Consultores. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    function showService(id) {
+      // Ocultar todas las secciones de servicio
+      document.querySelectorAll(".service").forEach((section) => {
+        section.style.display = "none";
+      });
+      // Ocultar sección home
+      document.getElementById("home").style.display = "none";
+
+      // Mostrar la sección solicitada
+      const selected = document.getElementById(id);
+      if (selected) {
+        selected.style.display = "block";
+        // Desplazar hacia arriba para que el usuario vea el contenido
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+  </script>
 </body>
 </html>
