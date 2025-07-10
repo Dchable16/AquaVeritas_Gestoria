@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HidroLegal Consultores</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #005f73, #0a9396);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    nav {
+      background-color: #0a9396;
+      padding: 15px;
+      text-align: center;
+    }
+    .menu {
+      display: inline-block;
+      position: relative;
+    }
+    .menu:hover .submenu {
+      display: block;
+    }
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #0a9396;
+      min-width: 200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .submenu a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+      text-align: left;
+    }
+    .submenu a:hover {
+      background-color: #007f7f;
+    }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      background: white;
+    }
+    h2 {
+      color: #005f73;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+    .servicio-link {
+      margin-bottom: 15px;
+      padding: 20px;
+      background: #e0f7fa;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .servicio-link a {
+      color: #005f73;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .servicio-link a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "✔️ ";
+      color: #0a9396;
+    }
+    footer {
+      background-color: #005f73;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+    .cta {
+      text-align: center;
+      background: #ee9b00;
+      color: #fff;
+      padding: 40px 20px;
+    }
+    .cta h3 {
+      margin: 0 0 15px 0;
+    }
+    .cta a {
+      background: #005f73;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .cta a:hover {
+      background: #0a9396;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HidroLegal Consultores</h1>
+    <p>Especialistas en trámites de aguas subterráneas en México</p>
+  </header>
+  <nav>
+    <div class="menu">
+      <a href="#servicios">Servicios</a>
+      <div class="submenu">
+        <a href="servicios/concesiones.html" target="_blank">Solicitud de concesión</a>
+        <a href="servicios/renovacion.html" target="_blank">Renovación de títulos</a>
+        <a href="servicios/transmision.html" target="_blank">Transmisión de derechos</a>
+        <a href="servicios/memorias.html" target="_blank">Memorias técnicas</a>
+        <a href="servicios/regularizacion.html" target="_blank">Regularización de pozos</a>
+        <a href="servicios/dictamenes.html" target="_blank">Dictámenes técnicos</a>
+        <a href="servicios/auditoria.html" target="_blank">Auditoría hídrica</a>
+        <a href="servicios/consultoria.html" target="_blank">Consultoría legal</a>
+      </div>
+    </div>
+    <a href="#clientes">Clientes</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <section id="servicios">
+    <h2>Importancia de los trámites de aguas subterráneas</h2>
+    <p>Realizar trámites relacionados con el uso y aprovechamiento del agua subterránea no solo es un requisito legal establecido por la Ley de Aguas Nacionales, sino también un acto de ética y responsabilidad social. Cumplir con la normativa ayuda a garantizar un uso sostenible del recurso, prevenir conflictos por el uso del agua y proteger los derechos tanto de particulares como del interés público.</p>
+    <p>En HidroLegal Consultores orientamos a nuestros clientes a cumplir cabalmente con sus obligaciones legales, asegurando seguridad jurídica y fomentando una cultura hídrica responsable.</p>
+  </section>
+  <section id="clientes">
+    <h2>¿A quiénes asesoramos?</h2>
+    <ul>
+      <li>Agricultores y productores</li>
+      <li>Constructoras y desarrolladores</li>
+      <li>Gobiernos municipales</li>
+      <li>Empresas industriales y de servicios</li>
+      <li>Perforadores y topógrafos</li>
+    </ul>
+  </section>
+  <section class="cta">
+    <h3>¿Listo para regularizar tus derechos de agua?</h3>
+    <p>Agenda una asesoría gratuita con nuestros expertos.</p>
+    <a href="#contacto">Contáctanos ahora</a>
+  </section>
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p><strong>Correo:</strong> contacto@hidrolegal.mx</p>
+    <p><strong>Teléfono:</strong> +52 55 1234 5678</p>
+    <p><strong>Ubicación:</strong> Ciudad de México, disponible para todo el país.</p>
+    <p><strong>Horario:</strong> Lunes a Viernes de 9:00 a 18:00 hrs</p>
+  </section>
+  <footer>
+    <p>&copy; 2025 HidroLegal Consultores. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
