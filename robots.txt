@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dchable16.github.io/Hidrolegal-Consultores/sitemap.xml
